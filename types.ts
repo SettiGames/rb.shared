@@ -243,8 +243,8 @@ export namespace RB {
         finder: number
         nets: number
         well: number
-        cannons?: number
-        defense?: number
+        cannons: number
+        defense: number
     }
 
 
@@ -317,6 +317,7 @@ export namespace RB {
         tsunami = 'tsunami',
         market = 'market'
     }
+
     export interface GameStats {
         rounds?: number
         fog?: number
@@ -347,6 +348,7 @@ export namespace RB {
         collisions = 'collisions',
         turnLengths = 'turnLengths'
     }
+
     export interface PlayerStats {
         boats?: string[]
         distance?: number
@@ -386,6 +388,24 @@ export namespace RB {
         dock: Player[]
     }
 
-    export enum CommKey {}
+    export enum CommKey {
+        attackResult = 'attackResult',
+        collision = 'collision',
+        commandeer = 'commandeer',
+        defenseResult = 'defenseResult',
+        fishFail = 'fishFail',
+        fishSuccess = 'fishSuccess',
+        hurricane = 'hurricane',
+        move = 'move',
+        newTurn = 'newTurn',
+        treasure = 'treasure',
+        trophy = 'trophy',
+        turnIn = 'turnIn'
+    }
+
+    export interface CommItem {
+        type: CommKey,
+        data: { [ key: string ]: any }
+    }
 
 }

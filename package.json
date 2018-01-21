@@ -1,7 +1,7 @@
 {
   "name": "rb.shared",
   "version": "1.0.0",
-  "description": "Collection of shared types, models and methods for Setti projects",
+  "description": "Collection of shared types, models and methods for Raider Bay projects",
   "main": "index.js",
   "repository": {
     "type": "git",

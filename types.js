@@ -129,6 +129,18 @@ var RB;
     })(SpaceAction = RB.SpaceAction || (RB.SpaceAction = {}));
     let CommKey;
     (function (CommKey) {
+        CommKey["attackResult"] = "attackResult";
+        CommKey["collision"] = "collision";
+        CommKey["commandeer"] = "commandeer";
+        CommKey["defenseResult"] = "defenseResult";
+        CommKey["fishFail"] = "fishFail";
+        CommKey["fishSuccess"] = "fishSuccess";
+        CommKey["hurricane"] = "hurricane";
+        CommKey["move"] = "move";
+        CommKey["newTurn"] = "newTurn";
+        CommKey["treasure"] = "treasure";
+        CommKey["trophy"] = "trophy";
+        CommKey["turnIn"] = "turnIn";
     })(CommKey = RB.CommKey || (RB.CommKey = {}));
 })(RB = exports.RB || (exports.RB = {}));
 //# sourceMappingURL=types.js.map

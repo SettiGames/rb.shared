@@ -35,7 +35,7 @@ export class Game {
     radio: RB.Broadcast[]
     stats: RB.GameStats
 
-    // comm
+    comm: Setti.StringMap<RB.CommItem[]>
     // actions
 
     constructor(json: any) {
