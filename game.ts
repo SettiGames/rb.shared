@@ -4,7 +4,6 @@ import { Setti, RB } from './types'
 
 export class Game {
     
-    id?: any
     slug: string
     name: string
     status: RB.GameStatus
@@ -13,9 +12,8 @@ export class Game {
     startDate: Date
     numOfPlayers: number
     isPrivate: boolean
+    isRadioEnabled: boolean
     invitees: string[]
-    gameMode: RB.GameMode
-    turnMode: RB.TurnMode
     turnLength: RB.TurnLength
     turnTimer?: Date
     gameDate: Date
@@ -24,51 +22,24 @@ export class Game {
     location: string
     fog: boolean
     tsunamiWarning: boolean
-    ratings: Setti.StringMap<number>
     turn: RB.Turn
     players: Setti.StringMap<RB.Player>
     market: number[]
-    fish: string[]
     weather: RB.Forecast[]
     board: Setti.StringMap<RB.Space>
     news: RB.NewsItem[]
-    radio: RB.Broadcast[]
     stats: RB.GameStats
 
+    adjacents: RB.Adjacents
     comm: Setti.StringMap<RB.CommItem[]>
     // actions
 
     constructor(json: any) {
-        this.id = json._id
-        this.slug = json.slug
-        this.name = json.name
-        this.status = json.status
-        this.host = json.host
-        this.winner = json.winner
-        this.startDate = new Date(json.startDate)
-        this.numOfPlayers = json.numOfPlayers
-        this.isPrivate = json.isPrivate
-        this.invitees = json.invitees
-        this.gameMode = json.gameMode
-        this.turnMode = json.turnMode
-        this.turnLength = json.turnLength
-        this.turnTimer = new Date(json.turnTimer)
-        this.gameDate = new Date(json.gameDate)
-        this.turnOrder = json.turnOrder
-        this.resigned = json.resigned
-        this.location = json.location
-        this.fog = json.fog
-        this.tsunamiWarning = json.tsunamiWarning
-        this.ratings = json.ratings
-        this.turn = json.turn
-        this.players = json.players
-        this.market = json.market
-        this.fish = json.fish
-        this.weather = json.weather
-        this.board = json.board
-        this.news = this.parseNews(json.news)
-        this.radio = this.parseRadio(json.radio)
-        this.stats = json.stats
+        this.parse(json)
+    }
+
+    get fish(): string[] {
+        return config.locations[this.location].fish
     }
 
     get displayStartDate(): string {
@@ -95,7 +66,38 @@ export class Game {
     }
 
 
-    // Parsing
+    // Parse
+
+    parse(json: any) {
+        if (json.slug) this.slug = json.slug
+        if (json.name) this.name = json.name
+        if (json.status) this.status = json.status
+        if (json.host) this.host = json.host
+        if (json.winner) this.winner = json.winner
+        if (json.startDate) this.startDate = new Date(json.startDate)
+        if (json.numOfPlayers) this.numOfPlayers = json.numOfPlayers
+        if (json.isPrivate !== undefined) this.isPrivate = json.isPrivate
+        if (json.isRadioEnabled !== undefined) this.isRadioEnabled = json.isRadioEnabled
+        if (json.invitees) this.invitees = json.invitees
+        if (json.turnLength) this.turnLength = json.turnLength
+        if (json.turnTimer) this.turnTimer = new Date(json.turnTimer)
+        if (json.gameDate) this.gameDate = new Date(json.gameDate)
+        if (json.turnOrder) this.turnOrder = json.turnOrder
+        if (json.resigned) this.resigned = json.resigned
+        if (json.location) this.location = json.location
+        if (json.fog !== undefined) this.fog = json.fog
+        if (json.tsunamiWarning !== undefined) this.tsunamiWarning = json.tsunamiWarning
+        if (json.turn) this.turn = json.turn
+        if (json.players) this.players = json.players
+        if (json.market) this.market = json.market
+        if (json.weather) this.weather = json.weather
+        if (json.board) this.board = json.board
+        if (json.news) this.news = this.parseNews(json.news)
+        if (json.stats) this.stats = json.stats
+
+        if (json.comm) this.comm = json.comm
+        if (json.adjacents) this.adjacents = json.adjacents
+    }
 
     private parseNews(json: any): RB.NewsItem[] {
         if (!json) {
@@ -105,20 +107,6 @@ export class Game {
         return json.map((item) => {
             return {
                 for: item.for,
-                message: item.message,
-                date: new Date(item.date)
-            }
-        })
-    }
-
-    private parseRadio(json: any): RB.Broadcast[] {
-        if (!json) {
-            return []
-        }
-
-        return json.map((item) => {
-            return {
-                from: item.from,
                 message: item.message,
                 date: new Date(item.date)
             }

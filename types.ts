@@ -2,6 +2,7 @@ import * as express from 'express'
 import * as mongoose from 'mongoose'
 import * as SocketIO from 'socket.io'
 import { Game } from './game'
+import { Radio } from './radio'
 
 export namespace Setti {
 
@@ -35,7 +36,7 @@ export namespace Setti {
         [ key: number ]: T
     }
 
-    export interface HandshakeData {
+    export interface ConnectionData {
         slug: string
         username: string
         client: string
@@ -77,6 +78,8 @@ export namespace Setti {
         username: string
     }
 
+    export type Acknowledgment = (...args: any[]) => void
+
 }
 
 export namespace RB {
@@ -106,7 +109,7 @@ export namespace RB {
     }
 
     export interface Action {
-        (game: Game, username: string, input: any): boolean
+        (game: Game, username: string, input: any): void
     }
 
 
@@ -121,6 +124,15 @@ export namespace RB {
 
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Radio
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export interface MongooseRadio extends Radio, mongoose.Document {
+        class: Radio
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     * Game Options
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum GameStatus {
@@ -128,17 +140,6 @@ export namespace RB {
         fresh = 'fresh',
         active = 'active',
         finished = 'finished'
-    }
-    
-    export enum GameMode {
-        attack = 'attack',
-        peaceful = 'peaceful'
-    }
-
-    export enum TurnMode {
-        normal = 'normal',
-        snake = 'snake',
-        shuffle = 'shuffle'
     }
 
     export enum TurnLength {
@@ -161,6 +162,7 @@ export namespace RB {
         moves: number
         attacks?: number
         isSkippable?: boolean
+        isBootable?: boolean
     }
 
 
@@ -209,6 +211,7 @@ export namespace RB {
         damage?: Damage
         upgrades?: Upgrades
         well?: Setti.NumberMap<number>[]
+        skipScore?: number
         stats?: PlayerStats
     }
 
@@ -221,6 +224,7 @@ export namespace RB {
         collision,
         storm,
         hurricane,
+        tsunami,
         attack,
         abandon,
         commandeer
@@ -279,11 +283,13 @@ export namespace RB {
         collision,
         storm,
         hurricane,
+        hurricaneWarning,
         tsunamiWarning,
         tsunami,
         sinkCollision,
         sinkStorm,
         sinkHurricane,
+        sinkTsunami,
         sinkAttack,
         sinkAbandon,
         sinkCommandeer,
@@ -393,13 +399,17 @@ export namespace RB {
         collision = 'collision',
         commandeer = 'commandeer',
         defenseResult = 'defenseResult',
+        fishFind = 'fishFind',
         fishFail = 'fishFail',
         fishSuccess = 'fishSuccess',
         hurricane = 'hurricane',
         move = 'move',
         newTurn = 'newTurn',
+        repair = 'repair',
+        storm = 'storm',
         treasure = 'treasure',
         trophy = 'trophy',
+        tsunami = 'tsunami',
         turnIn = 'turnIn'
     }
 

@@ -1,9 +1,12 @@
 export const config = {
 
-    initialFunds: 50,
-    bribeCost: 1500,
-    upgradeMax: 5,
-    broadcastMaxLength: 280,
+    initialFunds: 50,           // Amount of funds a players starts with
+    bribeCost: 200,            // Amount needed to purchase a trophy
+    // bribeCost: 1500,            // Amount needed to purchase a trophy
+    upgradeMax: 5,              // Maximum number of increments for upgrades
+    broadcastMaxLength: 280,    // Character limit for each chat message
+    bootableScore: 2,           // Number of times a user must be skipped before they can be booted
+    commandeerThreshold: 6,     // Dice difference required to commandeer a boat
 
     board: {
         width: 7,
@@ -19,9 +22,9 @@ export const config = {
     },
 
     tsunami: {
-        eventThreshold: 15,
-        warningThreshold: 25,
-        chance: 0.5
+        eventThreshold: 15,     // Total fish in the bay before a tsunami can happen
+        warningThreshold: 25,   // Total fish when tsunami warning is issued
+        chance: 0.5             // Chance a tsunami will happen when eventThreshold is met
     },
 
     damage: {
@@ -36,6 +39,10 @@ export const config = {
         hurricane: {
             min: 1,
             max: 6
+        },
+        tsunami: {
+            min: 1,
+            max: 3
         },
         attack: {
             min: 1,
@@ -85,49 +92,49 @@ export const config = {
         alaska: {
             label: 'Alaska',
             tsunami: 'in the Berring Sea',
-            fish: [ 'Salmon', 'Trout', 'Pike', 'Halibut', 'Char', 'Cod' ]
+            fish: [ 'Char', 'Cod', 'Halibut', 'Pike', 'Trout', 'Salmon' ]
         },
 
         crete: {
             label: 'Crete',
             tsunami: 'near Malta',
-            fish : [ 'Flounder', 'Swordfish', 'Cod', 'Alabacore', 'Mullet', 'Sea Bass' ]
+            fish : [ 'Alabacore', 'Cod', 'Flounder', 'Mullet', 'Sea Bass', 'Swordfish' ]
         },
 
         cuba: {
             label: 'Cuba',
             tsunami: 'off the coast of Trinidad',
-            fish : [ 'Mahi-Mahi', 'Tuna', 'Eel', 'Snapper', 'Grouper', 'Yellowtail' ]
+            fish : [ 'Eel', 'Grouper', 'Mahi-Mahi', 'Snapper', 'Tuna', 'Yellowtail' ]
         },
 
         fiji: {
             label: 'Fiji',
             tsunami: 'off the coast of Chile',
-            fish : [ 'Marlin', 'Tuna', 'Trevally', 'Sailfish', 'Wahoo', 'Tanguige' ]
+            fish : [ 'Marlin', 'Sailfish', 'Tanguige', 'Trevally', 'Tuna', 'Wahoo' ]
         },
 
         greenland: {
             label: 'Greenland',
             tsunami: 'in the Atlantc',
-            fish : [ 'Halibut', 'Salmon', 'Swordfish', 'Char', 'Catfish', 'Cod' ]
+            fish : [ 'Catfish', 'Char', 'Cod', 'Halibut', 'Salmon', 'Swordfish' ]
         },
 
         lakeSuperior: {
             label: 'Lake Superior',
             tsunami: 'near Green Bay',
-            fish : [ 'Carp', 'Trout', 'Bass', 'Perch', 'Salmon', 'White Fish' ]
+            fish : [ 'Bass', 'Carp', 'Perch', 'Salmon', 'Trout', 'White Fish' ]
         },
 
         madagascar: {
             label: 'Madagascar',
             tsunami: 'in the Mid-Indian Basin',
-            fish : [ 'Tilapia', 'Bass', 'Swordfish', 'Dorado', 'Kob', 'Tigerfish' ]
+            fish : [ 'Bass', 'Dorado', 'Kob', 'Swordfish', 'Tigerfish', 'Tilapia' ]
         },
 
         sovietUnion: {
             label: 'Soviet Union',
             tsunami: 'off the coast of Alaska',
-            fish : [ 'Bream', 'Sturgeon', 'Salmon', 'Char', 'Flounder', 'Navaga' ]
+            fish : [ 'Bream', 'Char', 'Flounder', 'Navaga', 'Salmon', 'Sturgeon' ]
         }
 
     },

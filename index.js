@@ -6,4 +6,6 @@ var types_1 = require("./types");
 exports.RB = types_1.RB;
 var game_1 = require("./game");
 exports.Game = game_1.Game;
+var radio_1 = require("./radio");
+exports.Radio = radio_1.Radio;
 //# sourceMappingURL=index.js.map

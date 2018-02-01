@@ -2,9 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.config = {
     initialFunds: 50,
-    bribeCost: 1500,
+    bribeCost: 200,
     upgradeMax: 5,
     broadcastMaxLength: 280,
+    bootableScore: 2,
+    commandeerThreshold: 6,
     board: {
         width: 7,
         height: 8,
@@ -33,6 +35,10 @@ exports.config = {
         hurricane: {
             min: 1,
             max: 6
+        },
+        tsunami: {
+            min: 1,
+            max: 3
         },
         attack: {
             min: 1,
@@ -75,42 +81,42 @@ exports.config = {
         alaska: {
             label: 'Alaska',
             tsunami: 'in the Berring Sea',
-            fish: ['Salmon', 'Trout', 'Pike', 'Halibut', 'Char', 'Cod']
+            fish: ['Char', 'Cod', 'Halibut', 'Pike', 'Trout', 'Salmon']
         },
         crete: {
             label: 'Crete',
             tsunami: 'near Malta',
-            fish: ['Flounder', 'Swordfish', 'Cod', 'Alabacore', 'Mullet', 'Sea Bass']
+            fish: ['Alabacore', 'Cod', 'Flounder', 'Mullet', 'Sea Bass', 'Swordfish']
         },
         cuba: {
             label: 'Cuba',
             tsunami: 'off the coast of Trinidad',
-            fish: ['Mahi-Mahi', 'Tuna', 'Eel', 'Snapper', 'Grouper', 'Yellowtail']
+            fish: ['Eel', 'Grouper', 'Mahi-Mahi', 'Snapper', 'Tuna', 'Yellowtail']
         },
         fiji: {
             label: 'Fiji',
             tsunami: 'off the coast of Chile',
-            fish: ['Marlin', 'Tuna', 'Trevally', 'Sailfish', 'Wahoo', 'Tanguige']
+            fish: ['Marlin', 'Sailfish', 'Tanguige', 'Trevally', 'Tuna', 'Wahoo']
         },
         greenland: {
             label: 'Greenland',
             tsunami: 'in the Atlantc',
-            fish: ['Halibut', 'Salmon', 'Swordfish', 'Char', 'Catfish', 'Cod']
+            fish: ['Catfish', 'Char', 'Cod', 'Halibut', 'Salmon', 'Swordfish']
         },
         lakeSuperior: {
             label: 'Lake Superior',
             tsunami: 'near Green Bay',
-            fish: ['Carp', 'Trout', 'Bass', 'Perch', 'Salmon', 'White Fish']
+            fish: ['Bass', 'Carp', 'Perch', 'Salmon', 'Trout', 'White Fish']
         },
         madagascar: {
             label: 'Madagascar',
             tsunami: 'in the Mid-Indian Basin',
-            fish: ['Tilapia', 'Bass', 'Swordfish', 'Dorado', 'Kob', 'Tigerfish']
+            fish: ['Bass', 'Dorado', 'Kob', 'Swordfish', 'Tigerfish', 'Tilapia']
         },
         sovietUnion: {
             label: 'Soviet Union',
             tsunami: 'off the coast of Alaska',
-            fish: ['Bream', 'Sturgeon', 'Salmon', 'Char', 'Flounder', 'Navaga']
+            fish: ['Bream', 'Char', 'Flounder', 'Navaga', 'Salmon', 'Sturgeon']
         }
     },
     vessels: [
