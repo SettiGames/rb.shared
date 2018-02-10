@@ -1,18 +1,26 @@
-import { RB } from './types'
+import { RB } from './../types'
 
 export class Radio {
     
     slug: string
     broadcasts: RB.Broadcast[]
 
-    constructor(json: any) {
-        this.slug = json.slug
-        this.broadcasts = this.parseBroadcasts(json.broadcasts)
+    constructor(json?: any) {
+        if (!json) {
+            return
+        }
+
+        this.parse(json)
     }
 
 
 
     // Parsing
+
+    parse(json: any) {
+        if (json.slug) this.slug = json.slug
+        if (json.broadcasts) this.parseBroadcasts(json.broadcasts)
+    }
 
     private parseBroadcasts(json: any): RB.Broadcast[] {
         if (!json) {

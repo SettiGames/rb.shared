@@ -1,6 +1,6 @@
 import * as moment from 'moment'
-import { config } from './configuration'
-import { Setti, RB } from './types'
+import { config } from './../configs'
+import { Setti, RB } from './../types'
 
 export class Game {
     
@@ -35,9 +35,17 @@ export class Game {
     comm: Setti.StringMap<RB.CommItem[]>
     // actions
 
-    constructor(json: any) {
+    constructor(json?: any) {
+        if (!json) {
+            return
+        }
+
         this.parse(json)
     }
+
+
+
+    // Computed
 
     get fish(): string[] {
         return config.locations[this.location].fish
@@ -65,6 +73,7 @@ export class Game {
 
         return names
     }
+
 
 
     // Parse
@@ -152,12 +161,12 @@ export class Game {
             taken.push(this.players[u].color)
         }
 
-        for (let hex in config.colors) {
+        for (let hex in config.game.colors) {
             if (taken.indexOf(hex) !== -1) {
                 continue
             }
 
-            available[hex] = config.colors[hex]
+            available[hex] = config.game.colors[hex]
         }
 
         return available

@@ -1,6 +1,11 @@
-export { config } from './configuration'
-export { vessels } from './vessels'
+// Configuration
+export { config } from './configs'
+
+// Typings
 export { RB, Setti } from './types'
-export { Game } from './game'
-export { Radio } from './radio'
-export { User } from './user'
+
+// Models
+export { Game } from './models/game'
+export { Radio } from './models/radio'
+export { Vessel } from './models/vessel'
+export { User } from './models/user'

@@ -1,9 +1,10 @@
 import * as express from 'express'
 import * as mongoose from 'mongoose'
 import * as SocketIO from 'socket.io'
-import { User } from './user'
-import { Game } from './game'
-import { Radio } from './radio'
+import { User } from './models/user'
+import { Game } from './models/game'
+import { Vessel } from './models/vessel'
+import { Radio } from './models/radio'
 
 export namespace Setti {
     
@@ -128,15 +129,8 @@ export namespace RB {
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     * Vessel
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-    export interface MongooseVessel extends Vessel, mongoose.Document {}
-
-    export interface Vessel {
-        owner: User
-        name: string
-        rating: number
-        location: string
-        type: string
-        colors: string[]
+    export interface MongooseVessel extends Vessel, mongoose.Document {
+        class: Vessel
     }
 
 
@@ -153,10 +147,7 @@ export namespace RB {
 
     export enum TurnLength {
         minutes = 'minutes',
-        hour = 'hour', 
-        day = 'day', 
-        twoDay = 'twoDay',
-        week = 'week'
+        day = 'day'
     }
 
 

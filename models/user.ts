@@ -1,4 +1,5 @@
-import { RB } from './types'
+import { Vessel } from './vessel'
+import { RB } from './../types'
 
 export class User {
 
@@ -13,12 +14,14 @@ export class User {
     wins?: string[]
     loses?: string[]
     resigned?: string[]
-    vessels?: RB.Vessel[]
+    vessels?: Vessel[] | string[]
 
     constructor(json?: any) {
         if (json) {
-            this.parse(json)
+            return
         }
+
+        this.parse(json)
     }
 
 
@@ -37,7 +40,21 @@ export class User {
         if (json.wins) this.wins = json.wins
         if (json.loses) this.loses = json.loses
         if (json.resigned) this.resigned = json.resigned
-        if (json.vessels) this.vessels = json.vessels
+        if (json.vessels) this.parseVessels(json.vessels)
+    }
+
+    private parseVessels(json: any) {
+        if (!json || !json.length) {
+            return
+        }
+
+        if (typeof json[0] === "string") {
+            this.vessels = json
+        }
+
+        return json.map((item) => {
+            return new Vessel(item)
+        })
     }
 
 
