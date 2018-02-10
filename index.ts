@@ -1,4 +1,6 @@
 export { config } from './configuration'
+export { vessels } from './vessels'
 export { RB, Setti } from './types'
 export { Game } from './game'
 export { Radio } from './radio'
+export { User } from './user'

@@ -1,29 +1,11 @@
 import * as express from 'express'
 import * as mongoose from 'mongoose'
 import * as SocketIO from 'socket.io'
+import { User } from './user'
 import { Game } from './game'
 import { Radio } from './radio'
 
 export namespace Setti {
-
-    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    * User
-    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-    export interface MongooseUser extends User, mongoose.Document {}
-
-    export interface User {
-        username?: string
-        email?: string
-        isAdmin: boolean
-        firebaseId: string
-        firebaseToken: string
-        games: string[]
-        wins: string[]
-        loses: string[]
-        resigned: string[]
-    }
-
-
     
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     * Data Types
@@ -80,7 +62,18 @@ export namespace Setti {
 
     export type Acknowledgment = (...args: any[]) => void
 
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * User
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export interface MongooseUser extends User, mongoose.Document {
+        class: User
+    }
+
 }
+
+
 
 export namespace RB {
 
@@ -128,6 +121,22 @@ export namespace RB {
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export interface MongooseRadio extends Radio, mongoose.Document {
         class: Radio
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Vessel
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export interface MongooseVessel extends Vessel, mongoose.Document {}
+
+    export interface Vessel {
+        owner: User
+        name: string
+        rating: number
+        location: string
+        type: string
+        colors: string[]
     }
 
 

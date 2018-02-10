@@ -7,10 +7,11 @@ export class Game {
     slug: string
     name: string
     status: RB.GameStatus
-    host: string
+    rating: number
     winner?: string
     startDate: Date
     numOfPlayers: number
+    isRanked: boolean
     isPrivate: boolean
     isRadioEnabled: boolean
     invitees: string[]
@@ -72,10 +73,11 @@ export class Game {
         if (json.slug) this.slug = json.slug
         if (json.name) this.name = json.name
         if (json.status) this.status = json.status
-        if (json.host) this.host = json.host
         if (json.winner) this.winner = json.winner
+        if (json.rating) this.rating = json.rating
         if (json.startDate) this.startDate = new Date(json.startDate)
         if (json.numOfPlayers) this.numOfPlayers = json.numOfPlayers
+        if (json.isRanked !== undefined) this.isRanked = json.isRanked
         if (json.isPrivate !== undefined) this.isPrivate = json.isPrivate
         if (json.isRadioEnabled !== undefined) this.isRadioEnabled = json.isRadioEnabled
         if (json.invitees) this.invitees = json.invitees
@@ -116,18 +118,6 @@ export class Game {
 
 
     // Methods
-
-    isHost(player: string): boolean
-    isHost(player: RB.Player): boolean
-    isHost(player): boolean {
-        let username = player
-
-        if (typeof player === "object") {
-            username = player.username
-        }
-        
-        return username === this.host
-    }
 
     isInGame(player: string): boolean
     isInGame(player: RB.Player): boolean

@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.config = {
     initialFunds: 50,
-    bribeCost: 200,
+    bribeCost: 1000,
     upgradeMax: 5,
     broadcastMaxLength: 280,
     bootableScore: 2,
@@ -56,7 +56,7 @@ exports.config = {
     colors: {
         'EEF4D7': 'White Whale',
         '667A84': 'Battle Gray',
-        '000000': 'Abyss Black',
+        '1A1A1A': 'Abyss Black',
         '492A15': 'Barnicle Brown',
         'F4A2A2': 'Salmon Pink',
         'B21D1D': 'Red Tide',
@@ -80,44 +80,34 @@ exports.config = {
     locations: {
         alaska: {
             label: 'Alaska',
+            isEnabled: true,
             tsunami: 'in the Berring Sea',
             fish: ['Char', 'Cod', 'Halibut', 'Pike', 'Trout', 'Salmon']
         },
-        crete: {
-            label: 'Crete',
-            tsunami: 'near Malta',
-            fish: ['Alabacore', 'Cod', 'Flounder', 'Mullet', 'Sea Bass', 'Swordfish']
+        china: {
+            label: 'China',
+            isEnabled: true,
+            tsunami: 'in the Berring Sea',
+            fish: ['Char', 'Cod', 'Halibut', 'Pike', 'Trout', 'Salmon']
         },
-        cuba: {
-            label: 'Cuba',
-            tsunami: 'off the coast of Trinidad',
-            fish: ['Eel', 'Grouper', 'Mahi-Mahi', 'Snapper', 'Tuna', 'Yellowtail']
+        india: {
+            label: 'India',
+            isEnabled: true,
+            tsunami: 'in the Berring Sea',
+            fish: ['Char', 'Cod', 'Halibut', 'Pike', 'Trout', 'Salmon']
         },
-        fiji: {
-            label: 'Fiji',
-            tsunami: 'off the coast of Chile',
-            fish: ['Marlin', 'Sailfish', 'Tanguige', 'Trevally', 'Tuna', 'Wahoo']
+        japan: {
+            label: 'Japan',
+            isEnabled: true,
+            tsunami: 'in the Berring Sea',
+            fish: ['Char', 'Cod', 'Halibut', 'Pike', 'Trout', 'Salmon']
         },
-        greenland: {
-            label: 'Greenland',
-            tsunami: 'in the Atlantc',
-            fish: ['Catfish', 'Char', 'Cod', 'Halibut', 'Salmon', 'Swordfish']
+        unitedKingdom: {
+            label: 'UK',
+            isEnabled: true,
+            tsunami: 'in the Berring Sea',
+            fish: ['Char', 'Cod', 'Halibut', 'Pike', 'Trout', 'Salmon']
         },
-        lakeSuperior: {
-            label: 'Lake Superior',
-            tsunami: 'near Green Bay',
-            fish: ['Bass', 'Carp', 'Perch', 'Salmon', 'Trout', 'White Fish']
-        },
-        madagascar: {
-            label: 'Madagascar',
-            tsunami: 'in the Mid-Indian Basin',
-            fish: ['Bass', 'Dorado', 'Kob', 'Swordfish', 'Tigerfish', 'Tilapia']
-        },
-        sovietUnion: {
-            label: 'Soviet Union',
-            tsunami: 'off the coast of Alaska',
-            fish: ['Bream', 'Char', 'Flounder', 'Navaga', 'Salmon', 'Sturgeon']
-        }
     },
     vessels: [
         {
@@ -315,6 +305,96 @@ exports.config = {
             description: 'Victoria was a Spanish carrack and the first ship to successfully circumnavigate the world. The voyage started with a crew of about 265 men aboard five ships. Of all these, only 18 men returned alive on the Victoria. Many of the men died of malnutrition.',
             url: 'http://en.wikipedia.org/wiki/Victoria_(ship)'
         }
-    ]
+    ],
+    modes: {
+        ranked: [
+            {
+                name: 'Ranked 4 Player 5 Minutes',
+                code: 'r-4p-5m',
+                isEnabled: true,
+                attributes: [[4, 'Players'], [5, 'Minutes']]
+            }
+        ],
+        unranked: [
+            {
+                name: 'Unranked 2 Player 5 Minutes',
+                code: 'u-2p-5m',
+                isEnabled: true,
+                attributes: [[2, 'Players'], [5, 'Minutes']]
+            },
+            {
+                name: 'Unranked 2 Player 25 Hours',
+                code: 'u-2p-25h',
+                isEnabled: true,
+                attributes: [[2, 'Players'], [25, 'Hours']]
+            },
+            {
+                name: 'Unranked 4 Player 5 Minutes',
+                code: 'u-4p-5m',
+                isEnabled: true,
+                attributes: [[4, 'Players'], [5, 'Minutes']]
+            },
+            {
+                name: 'Unranked 4 Player 25 Hours',
+                code: 'u-4p-25h',
+                isEnabled: true,
+                attributes: [[4, 'Players'], [25, 'Hours']]
+            },
+            {
+                name: 'Unranked 6 Player 5 Minutes',
+                code: 'u-6p-5m',
+                isEnabled: true,
+                attributes: [[6, 'Players'], [5, 'Minutes']]
+            },
+            {
+                name: 'Unranked 6 Player 25 Hours',
+                code: 'u-6p-25h',
+                isEnabled: true,
+                attributes: [[6, 'Players'], [25, 'Hours']]
+            }
+        ],
+        solo: [
+            {
+                name: 'A Fortnight At Sea',
+                code: 's-14d',
+                isEnabled: true,
+                attributes: [[14, 'Days']]
+            },
+            {
+                name: 'The Kraken',
+                code: '',
+                isEnabled: false,
+                attributes: [[14, 'Turns'], [1, 'Monster']]
+            }
+        ],
+        private: []
+    },
+    images: {
+        hero: {
+            small: [0, 0],
+            medium: [312, 203],
+            large: [800, 520]
+        },
+        icon: {
+            small: [116, 100],
+            medium: [180, 155],
+            large: [250, 216]
+        },
+        front: {
+            small: [0, 0],
+            medium: [0, 0],
+            large: [300, 250]
+        },
+        sink: {
+            small: [0, 0],
+            medium: [0, 0],
+            large: [0, 0]
+        },
+        action: {
+            small: [0, 0],
+            medium: [0, 0],
+            large: [330, 225]
+        }
+    }
 };
 //# sourceMappingURL=configuration.js.map

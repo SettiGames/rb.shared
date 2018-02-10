@@ -33,14 +33,16 @@ class Game {
             this.name = json.name;
         if (json.status)
             this.status = json.status;
-        if (json.host)
-            this.host = json.host;
         if (json.winner)
             this.winner = json.winner;
+        if (json.rating)
+            this.rating = json.rating;
         if (json.startDate)
             this.startDate = new Date(json.startDate);
         if (json.numOfPlayers)
             this.numOfPlayers = json.numOfPlayers;
+        if (json.isRanked !== undefined)
+            this.isRanked = json.isRanked;
         if (json.isPrivate !== undefined)
             this.isPrivate = json.isPrivate;
         if (json.isRadioEnabled !== undefined)
@@ -93,13 +95,6 @@ class Game {
                 date: new Date(item.date)
             };
         });
-    }
-    isHost(player) {
-        let username = player;
-        if (typeof player === "object") {
-            username = player.username;
-        }
-        return username === this.host;
     }
     isInGame(player) {
         let username = player;
