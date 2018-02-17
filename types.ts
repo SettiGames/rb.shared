@@ -132,6 +132,13 @@ export namespace RB {
     export interface MongooseVessel extends Vessel, mongoose.Document {
         class: Vessel
     }
+    
+    export interface GameVessel {
+        slug?: string
+        name: string
+        type: string
+        rating?: number
+    }
 
 
 
@@ -200,7 +207,8 @@ export namespace RB {
     export interface Player {
         username: string
         color: string
-        vessel: string
+        vessel: GameVessel
+        rating: number
         funds?: number
         location?: string
         trophies?: boolean[]

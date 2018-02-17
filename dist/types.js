@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var RB;
 (function (RB) {
-    let ActionType;
+    var ActionType;
     (function (ActionType) {
         ActionType["abandon"] = "abandon";
         ActionType["boot"] = "boot";
@@ -23,26 +23,26 @@ var RB;
         ActionType["turnIn"] = "turnIn";
         ActionType["upgrade"] = "upgrade";
     })(ActionType = RB.ActionType || (RB.ActionType = {}));
-    let GameStatus;
+    var GameStatus;
     (function (GameStatus) {
         GameStatus["open"] = "open";
         GameStatus["fresh"] = "fresh";
         GameStatus["active"] = "active";
         GameStatus["finished"] = "finished";
     })(GameStatus = RB.GameStatus || (RB.GameStatus = {}));
-    let TurnLength;
+    var TurnLength;
     (function (TurnLength) {
         TurnLength["minutes"] = "minutes";
         TurnLength["day"] = "day";
     })(TurnLength = RB.TurnLength || (RB.TurnLength = {}));
-    let WeatherType;
+    var WeatherType;
     (function (WeatherType) {
         WeatherType["clear"] = "clear";
         WeatherType["storm"] = "storm";
         WeatherType["fog"] = "fog";
         WeatherType["hurricane"] = "hurricane";
     })(WeatherType = RB.WeatherType || (RB.WeatherType = {}));
-    let DamageType;
+    var DamageType;
     (function (DamageType) {
         DamageType[DamageType["collision"] = 0] = "collision";
         DamageType[DamageType["storm"] = 1] = "storm";
@@ -52,7 +52,7 @@ var RB;
         DamageType[DamageType["abandon"] = 5] = "abandon";
         DamageType[DamageType["commandeer"] = 6] = "commandeer";
     })(DamageType = RB.DamageType || (RB.DamageType = {}));
-    let NewsKey;
+    var NewsKey;
     (function (NewsKey) {
         NewsKey[NewsKey["newGame"] = 0] = "newGame";
         NewsKey[NewsKey["fog"] = 1] = "fog";
@@ -79,7 +79,7 @@ var RB;
         NewsKey[NewsKey["bribe"] = 22] = "bribe";
         NewsKey[NewsKey["upgrade"] = 23] = "upgrade";
     })(NewsKey = RB.NewsKey || (RB.NewsKey = {}));
-    let GameStatKey;
+    var GameStatKey;
     (function (GameStatKey) {
         GameStatKey["rounds"] = "rounds";
         GameStatKey["fog"] = "fog";
@@ -88,7 +88,7 @@ var RB;
         GameStatKey["tsunami"] = "tsunami";
         GameStatKey["market"] = "market";
     })(GameStatKey = RB.GameStatKey || (RB.GameStatKey = {}));
-    let PlayerStatKey;
+    var PlayerStatKey;
     (function (PlayerStatKey) {
         PlayerStatKey["boats"] = "boats";
         PlayerStatKey["distance"] = "distance";
@@ -110,13 +110,13 @@ var RB;
         PlayerStatKey["collisions"] = "collisions";
         PlayerStatKey["turnLengths"] = "turnLengths";
     })(PlayerStatKey = RB.PlayerStatKey || (RB.PlayerStatKey = {}));
-    let SpaceAction;
+    var SpaceAction;
     (function (SpaceAction) {
         SpaceAction["move"] = "M";
         SpaceAction["inspect"] = "I";
         SpaceAction["attack"] = "A";
     })(SpaceAction = RB.SpaceAction || (RB.SpaceAction = {}));
-    let CommKey;
+    var CommKey;
     (function (CommKey) {
         CommKey["attackResult"] = "attackResult";
         CommKey["collision"] = "collision";

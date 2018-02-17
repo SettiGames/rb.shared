@@ -13,7 +13,7 @@ export class Game {
     numOfPlayers: number
     isRanked: boolean
     isPrivate: boolean
-    isRadioEnabled: boolean
+    isSolo: boolean
     invitees: string[]
     turnLength: RB.TurnLength
     turnTimer?: Date
@@ -68,7 +68,7 @@ export class Game {
         let names: string[] = []
 
         for (var username in this.players) {
-            names.push(this.players[username].vessel)
+            names.push(this.players[username].vessel.name)
         }
 
         return names
@@ -88,7 +88,7 @@ export class Game {
         if (json.numOfPlayers) this.numOfPlayers = json.numOfPlayers
         if (json.isRanked !== undefined) this.isRanked = json.isRanked
         if (json.isPrivate !== undefined) this.isPrivate = json.isPrivate
-        if (json.isRadioEnabled !== undefined) this.isRadioEnabled = json.isRadioEnabled
+        if (json.isSolo !== undefined) this.isSolo = json.isSolo
         if (json.invitees) this.invitees = json.invitees
         if (json.turnLength) this.turnLength = json.turnLength
         if (json.turnTimer) this.turnTimer = new Date(json.turnTimer)
@@ -140,7 +140,7 @@ export class Game {
         return this.players[username] !== undefined
     }
 
-    availableColors(player: string): { [ key: string ]: string }
+    availableColors(player?: string): { [ key: string ]: string }
     availableColors(player: RB.Player): { [ key: string ]: string }
     availableColors(player): { [ key: string ]: string } {
         let username = player

@@ -19,7 +19,7 @@ export class Radio {
 
     parse(json: any) {
         if (json.slug) this.slug = json.slug
-        if (json.broadcasts) this.parseBroadcasts(json.broadcasts)
+        if (json.broadcasts) this.broadcasts = this.parseBroadcasts(json.broadcasts)
     }
 
     private parseBroadcasts(json: any): RB.Broadcast[] {

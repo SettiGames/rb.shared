@@ -1,35 +1,55 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const moment = require("moment");
-const configs_1 = require("./../configs");
-class Game {
-    constructor(json) {
+var moment = require("moment");
+var configs_1 = require("./../configs");
+var Game = (function () {
+    function Game(json) {
         if (!json) {
             return;
         }
         this.parse(json);
     }
-    get fish() {
-        return configs_1.config.locations[this.location].fish;
-    }
-    get displayStartDate() {
-        return moment(this.startDate).format('MM/DD/YYYY');
-    }
-    get displayGameDate() {
-        return moment(this.gameDate).format('MM/DD/YYYY');
-    }
-    get displayLocation() {
-        const location = configs_1.config.locations[this.location];
-        return location.label || '';
-    }
-    get vesselNames() {
-        let names = [];
-        for (var username in this.players) {
-            names.push(this.players[username].vessel);
-        }
-        return names;
-    }
-    parse(json) {
+    Object.defineProperty(Game.prototype, "fish", {
+        get: function () {
+            return configs_1.config.locations[this.location].fish;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Game.prototype, "displayStartDate", {
+        get: function () {
+            return moment(this.startDate).format('MM/DD/YYYY');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Game.prototype, "displayGameDate", {
+        get: function () {
+            return moment(this.gameDate).format('MM/DD/YYYY');
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Game.prototype, "displayLocation", {
+        get: function () {
+            var location = configs_1.config.locations[this.location];
+            return location.label || '';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Game.prototype, "vesselNames", {
+        get: function () {
+            var names = [];
+            for (var username in this.players) {
+                names.push(this.players[username].vessel.name);
+            }
+            return names;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Game.prototype.parse = function (json) {
         if (json.slug)
             this.slug = json.slug;
         if (json.name)
@@ -48,8 +68,8 @@ class Game {
             this.isRanked = json.isRanked;
         if (json.isPrivate !== undefined)
             this.isPrivate = json.isPrivate;
-        if (json.isRadioEnabled !== undefined)
-            this.isRadioEnabled = json.isRadioEnabled;
+        if (json.isSolo !== undefined)
+            this.isSolo = json.isSolo;
         if (json.invitees)
             this.invitees = json.invitees;
         if (json.turnLength)
@@ -86,47 +106,48 @@ class Game {
             this.comm = json.comm;
         if (json.adjacents)
             this.adjacents = json.adjacents;
-    }
-    parseNews(json) {
+    };
+    Game.prototype.parseNews = function (json) {
         if (!json) {
             return [];
         }
-        return json.map((item) => {
+        return json.map(function (item) {
             return {
                 for: item.for,
                 message: item.message,
                 date: new Date(item.date)
             };
         });
-    }
-    isInGame(player) {
-        let username = player;
+    };
+    Game.prototype.isInGame = function (player) {
+        var username = player;
         if (typeof player === "object") {
             username = player.username;
         }
         return this.players[username] !== undefined;
-    }
-    availableColors(player) {
-        let username = player;
+    };
+    Game.prototype.availableColors = function (player) {
+        var username = player;
         if (typeof player === "object") {
             username = player.username;
         }
-        let taken = [];
-        let available = {};
-        for (let u in this.players) {
+        var taken = [];
+        var available = {};
+        for (var u in this.players) {
             if (u === username) {
                 continue;
             }
             taken.push(this.players[u].color);
         }
-        for (let hex in configs_1.config.game.colors) {
+        for (var hex in configs_1.config.game.colors) {
             if (taken.indexOf(hex) !== -1) {
                 continue;
             }
             available[hex] = configs_1.config.game.colors[hex];
         }
         return available;
-    }
-}
+    };
+    return Game;
+}());
 exports.Game = Game;
 //# sourceMappingURL=game.js.map

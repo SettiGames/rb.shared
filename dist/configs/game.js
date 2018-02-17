@@ -52,7 +52,7 @@ exports.game = {
     market: {
         min: 5,
         max: 75,
-        initial: [0, 0, 21, 22, 23, 24, 25, 26, 27, 28]
+        initial: [0, 21, 21, 22, 23, 24, 25, 26, 27, 28]
     },
     radio: {
         max: 280

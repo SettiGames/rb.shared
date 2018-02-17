@@ -1,48 +1,67 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const user_1 = require("./user");
-const configs_1 = require("./../configs");
-class Vessel {
-    constructor(json) {
-        if (json) {
+var user_1 = require("./user");
+var configs_1 = require("./../configs");
+var Vessel = (function () {
+    function Vessel(json) {
+        if (!json) {
             return;
         }
         this.parse(json);
     }
-    get color() {
-        return this.colors[0];
-    }
-    get typeName() {
-        return configs_1.config.vessels[this.type].name;
-    }
-    get effect() {
-        return configs_1.config.vessels[this.type].effect;
-    }
-    get shapes() {
-        return configs_1.config.vessels[this.type].shapes;
-    }
-    parse(json) {
-        if (json.owner)
-            this.parseOwner(json.owner);
-        if (json.ownerUsername)
-            this.ownerUsername = json.ownerUsername;
+    Object.defineProperty(Vessel.prototype, "color", {
+        get: function () {
+            return this.colors[0];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Vessel.prototype, "typeName", {
+        get: function () {
+            return configs_1.config.vessels[this.type].name;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Vessel.prototype, "effect", {
+        get: function () {
+            return configs_1.config.vessels[this.type].effect;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Vessel.prototype, "shapes", {
+        get: function () {
+            return configs_1.config.vessels[this.type].shapes;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Vessel.prototype.parse = function (json) {
         if (json.name)
             this.name = json.name;
+        if (json.slug)
+            this.slug = json.slug;
         if (json.rating !== undefined)
             this.rating = json.rating;
-        if (json.location)
-            this.location = json.location;
         if (json.type)
             this.type = json.type;
+        if (json.location)
+            this.location = json.location;
         if (json.colors)
             this.colors = json.colors;
-    }
-    parseOwner(input) {
+        if (json.username)
+            this.username = json.username;
+        if (json.owner)
+            this.parseOwner(json.owner);
+    };
+    Vessel.prototype.parseOwner = function (input) {
         if (typeof input === "string") {
             this.owner = input;
         }
         this.owner = new user_1.User(input);
-    }
-}
+    };
+    return Vessel;
+}());
 exports.Vessel = Vessel;
 //# sourceMappingURL=vessel.js.map

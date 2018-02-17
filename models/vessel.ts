@@ -3,16 +3,17 @@ import { config } from './../configs'
 
 export class Vessel {
 
-    owner?: string | User
-    ownerUsername?: string
+    slug?: string
     name: string
-    rating: number
-    location: string
     type: string
-    colors: string[]
+    rating?: number
+    location?: string
+    colors?: string[]
+    username?: string
+    owner?: string | User
 
     constructor(json?: any) {
-        if (json) {
+        if (!json) {
             return
         }
 
@@ -44,13 +45,14 @@ export class Vessel {
     // Parsing
 
     parse(json: any) {
-        if (json.owner) this.parseOwner(json.owner)
-        if (json.ownerUsername) this.ownerUsername = json.ownerUsername
         if (json.name) this.name = json.name
+        if (json.slug) this.slug = json.slug
         if (json.rating !== undefined) this.rating = json.rating
-        if (json.location) this.location = json.location
         if (json.type) this.type = json.type
+        if (json.location) this.location = json.location
         if (json.colors) this.colors = json.colors
+        if (json.username) this.username = json.username
+        if (json.owner) this.parseOwner(json.owner)
     }
 
     private parseOwner(input: any) {
