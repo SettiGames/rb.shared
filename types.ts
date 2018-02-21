@@ -30,6 +30,11 @@ export namespace Setti {
         data: { [ key: string ]: any }
     }
 
+    export interface RadioData {
+        offset: number
+        limit: number
+    }
+
 
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -276,8 +281,33 @@ export namespace RB {
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export interface Broadcast {
         from: string
+        type: BroadcastType
         message: string
-        date: Date
+        date: Date,
+        gameDate: Date
+    }
+
+    export enum BroadcastType {
+        chat = 'chat',
+        news = 'news',
+        treasure = 'treasure',
+        important = 'important'
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Warning
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export interface Warning {
+        from: string
+        type: WarningType
+        message: string
+    }
+
+    export enum WarningType {
+        warning = 'warning',
+        urgent = 'urgent'
     }
 
 
@@ -291,8 +321,6 @@ export namespace RB {
         collision,
         storm,
         hurricane,
-        hurricaneWarning,
-        tsunamiWarning,
         tsunami,
         sinkCollision,
         sinkStorm,
@@ -310,12 +338,6 @@ export namespace RB {
         remove,
         bribe,
         upgrade
-    }
-
-    export interface NewsItem {
-        for: string[]
-        message: string
-        date: Date
     }
 
 

@@ -98,26 +98,14 @@ var Game = (function () {
             this.weather = json.weather;
         if (json.board)
             this.board = json.board;
-        if (json.news)
-            this.news = this.parseNews(json.news);
         if (json.stats)
             this.stats = json.stats;
+        if (json.warning !== undefined)
+            this.warning = json.warning;
         if (json.comm)
             this.comm = json.comm;
         if (json.adjacents)
             this.adjacents = json.adjacents;
-    };
-    Game.prototype.parseNews = function (json) {
-        if (!json) {
-            return [];
-        }
-        return json.map(function (item) {
-            return {
-                for: item.for,
-                message: item.message,
-                date: new Date(item.date)
-            };
-        });
     };
     Game.prototype.isInGame = function (player) {
         var username = player;

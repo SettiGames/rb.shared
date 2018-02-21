@@ -28,11 +28,12 @@ export class Game {
     market: number[]
     weather: RB.Forecast[]
     board: Setti.StringMap<RB.Space>
-    news: RB.NewsItem[]
     stats: RB.GameStats
 
+    warning: RB.Warning
     adjacents: RB.Adjacents
     comm: Setti.StringMap<RB.CommItem[]>
+    newsBroadcasts: RB.Broadcast[]
     // actions
 
     constructor(json?: any) {
@@ -103,25 +104,11 @@ export class Game {
         if (json.market) this.market = json.market
         if (json.weather) this.weather = json.weather
         if (json.board) this.board = json.board
-        if (json.news) this.news = this.parseNews(json.news)
         if (json.stats) this.stats = json.stats
 
+        if (json.warning !== undefined) this.warning = json.warning
         if (json.comm) this.comm = json.comm
         if (json.adjacents) this.adjacents = json.adjacents
-    }
-
-    private parseNews(json: any): RB.NewsItem[] {
-        if (!json) {
-            return []
-        }
-
-        return json.map((item) => {
-            return {
-                for: item.for,
-                message: item.message,
-                date: new Date(item.date)
-            }
-        })
     }
 
 
