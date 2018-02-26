@@ -65,7 +65,7 @@ export const locations = {
         hurricanes: {
             chance: 0,
             label: '',
-            service: '',
+            service: 'Dirección Meteorológica',
             names: [ ]
         },
         tsunami: {

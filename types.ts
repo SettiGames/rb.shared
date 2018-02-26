@@ -225,7 +225,6 @@ export namespace RB {
         upgrades?: Upgrades
         well?: Setti.NumberMap<number>[]
         skipScore?: number
-        stats?: PlayerStats
     }
 
 
@@ -364,7 +363,7 @@ export namespace RB {
     }
 
     export enum PlayerStatKey {
-        boats = 'boats',
+        vessels = 'vessels',
         distance = 'distance',
         biggestCatch = 'biggestCatch',
         fishCaught = 'fishCaught',
@@ -376,17 +375,18 @@ export namespace RB {
         attackRolls = 'attackRolls',
         biggestAttack = 'biggestAttack',
         fishStolen = 'fishStolen',
-        moneyStolen = 'moneyStolen',
+        bribe = 'bribe',
         commandeer = 'commandeer',
         defenseSuccess = 'defenseSuccess',
         defenseFail = 'defenseFail',
         defenseRolls = 'defenseRolls',
         collisions = 'collisions',
-        turnLengths = 'turnLengths'
+        turnLengths = 'turnLengths',
+        ratingsDelta = 'ratingsDelta'
     }
 
     export interface PlayerStats {
-        boats?: string[]
+        vessels?: string[]
         distance?: number
         biggestCatch?: Catch
         fishCaught?: number
@@ -398,13 +398,52 @@ export namespace RB {
         attackRolls?: number[]
         biggestAttack?: Setti.StringMap<string | number>
         fishStolen?: number
-        moneyStolen?: number
+        bribe?: number
         commandeer?: number
         defenseSuccess?: number
         defenseFail?: number
         defenseRolls?: number[]
         collisions?: number
         turnLengths?: number[]
+        ratingsDelta?: number
+    }
+
+    export enum VesselStatKey {
+        distance = 'distance',
+        biggestCatch = 'biggestCatch',
+        fishCaught = 'fishCaught',
+        earnings = 'earnings',
+        treasure = 'treasure',
+        attackSuccess = 'attackSuccess',
+        attackFail = 'attackFail',
+        attackRolls = 'attackRolls',
+        biggestAttack = 'biggestAttack',
+        fishStolen = 'fishStolen',
+        moneyStolen = 'moneyStolen',
+        commandeer = 'commandeer',
+        defenseSuccess = 'defenseSuccess',
+        defenseFail = 'defenseFail',
+        defenseRolls = 'defenseRolls',
+        collisions = 'collisions',
+    }
+
+    export interface VesselStats {
+        distance?: number
+        biggestCatch?: Catch
+        fishCaught?: number
+        earnings?: number
+        treasure?: number
+        attackSuccess?: number
+        attackFail?: number
+        attackRolls?: number[]
+        biggestAttack?: Setti.StringMap<string | number>
+        fishStolen?: number
+        moneyStolen?: number
+        commandeer?: number
+        defenseSuccess?: number
+        defenseFail?: number
+        defenseRolls?: number[]
+        collisions?: number
     }
 
 
@@ -433,6 +472,7 @@ export namespace RB {
         fishFail = 'fishFail',
         fishSuccess = 'fishSuccess',
         hurricane = 'hurricane',
+        lose = 'lose',
         move = 'move',
         newTurn = 'newTurn',
         repair = 'repair',
@@ -440,7 +480,8 @@ export namespace RB {
         treasure = 'treasure',
         trophy = 'trophy',
         tsunami = 'tsunami',
-        turnIn = 'turnIn'
+        turnIn = 'turnIn',
+        win = 'win'
     }
 
     export interface CommItem {

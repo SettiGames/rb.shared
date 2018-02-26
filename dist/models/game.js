@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var moment = require("moment");
 var configs_1 = require("./../configs");
+var types_1 = require("./../types");
 var Game = (function () {
     function Game(json) {
         if (!json) {
@@ -45,6 +46,28 @@ var Game = (function () {
                 names.push(this.players[username].vessel.name);
             }
             return names;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Game.prototype, "isSkippable", {
+        get: function () {
+            var threshold = moment().subtract(this.turnDuration);
+            return moment(this.turnTimer).isBefore(threshold);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Game.prototype, "turnDuration", {
+        get: function () {
+            switch (this.turnLength) {
+                case types_1.RB.TurnLength.minutes:
+                    return moment.duration(10, 'minutes');
+                case types_1.RB.TurnLength.day:
+                    return moment.duration(1, 'days');
+                default:
+                    break;
+            }
         },
         enumerable: true,
         configurable: true

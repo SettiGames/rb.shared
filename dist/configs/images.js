@@ -17,9 +17,9 @@ exports.images = {
         large: [300, 250]
     },
     sink: {
-        small: [0, 0],
-        medium: [0, 0],
-        large: [0, 0]
+        small: [116, 69],
+        medium: [200, 119],
+        large: [330, 196]
     },
     action: {
         small: [0, 0],

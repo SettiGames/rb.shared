@@ -28,7 +28,11 @@ export class Game {
     market: number[]
     weather: RB.Forecast[]
     board: Setti.StringMap<RB.Space>
-    stats: RB.GameStats
+    stats: {
+        game: RB.GameStats,
+        players: Setti.StringMap<RB.PlayerStats>,
+        vessels: Setti.StringMap<RB.VesselStats>
+    }
 
     warning: RB.Warning
     adjacents: RB.Adjacents
@@ -73,6 +77,22 @@ export class Game {
         }
 
         return names
+    }
+
+    get isSkippable(): boolean {
+        const threshold = moment().subtract(this.turnDuration)
+        return moment(this.turnTimer).isBefore(threshold)
+    }
+    
+    get turnDuration(): moment.Duration {
+        switch(this.turnLength) {
+            case RB.TurnLength.minutes:
+                return moment.duration(10, 'minutes')
+            case RB.TurnLength.day:
+                return moment.duration(1, 'days')
+            default:
+                break
+        }
     }
 
 

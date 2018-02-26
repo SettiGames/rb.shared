@@ -71,10 +71,6 @@ exports.game = {
         '199EE0': 'Big Sky Blue',
         '6E2C89': 'Purple Dusk'
     },
-    hurricaneNames: [
-        'Arthur', 'Bertha', 'Cesar', 'Diana', 'Edouard', 'Fran', 'Gustav', 'Hortense', 'Isidore', 'Josephine',
-        'Klaus', 'Lili', 'Marco', 'Nana', 'Omar', 'Paloma', 'Rene', 'Sally', 'Teddy', 'Vicky', 'Wilfred'
-    ],
     gameNames: [
         'Clash at Raider Bay', 'Battle in Raider Bay', 'The Raider Bay Dispute', 'A Difference of Opinion',
         'Disharmony', 'The Giant Swordfish', 'Savage Anglers', 'Dangerous and Eutrophic', 'Fish Eat Fish',
