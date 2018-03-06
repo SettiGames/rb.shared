@@ -14,6 +14,7 @@ export const locations = {
             chance: 0.1,
             label: 'Hurricane',
             service: 'NWS Anchorage',
+            allowClusters: false,
             names: [
                 'Alma', 'Boris', 'Cristina', 'Douglas', 'Elida', 'Fausto', 'Genevieve',
                 'Hernan', 'Iselle', 'Julio', 'Kenna', 'Lowell', 'Marie', 'Norbert',
@@ -23,7 +24,8 @@ export const locations = {
         tsunami: {
             location: 'in the Gulf of Alaska',
             service: 'PTWC Palmer'
-        }
+        },
+        depths: [ 0, 0, 0, 1, 1, 1, 2, 2 ]
     },
 
     cuba: {
@@ -40,6 +42,7 @@ export const locations = {
             chance: 0.3,
             label: 'Hurricane',
             service: 'Instituto de Meteorología',
+            allowClusters: false,
             names: [
                 'Arthur', 'Bertha', 'Cesar', 'Diana', 'Edouard', 'Fran', 'Gustav',
                 'Hortense', 'Isidore', 'Josephine', 'Klaus', 'Lili', 'Marco', 'Nana',
@@ -49,7 +52,8 @@ export const locations = {
         tsunami: {
             location: 'off the northern coast of Honduras',
             service: 'PTWC Miami'
-        }
+        },
+        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
 
     chile: {
@@ -66,12 +70,14 @@ export const locations = {
             chance: 0,
             label: '',
             service: 'Dirección Meteorológica',
+            allowClusters: false,
             names: [ ]
         },
         tsunami: {
             location: 'near Isla de Pascua',
             service: 'PTWC Santiago'
-        }
+        },
+        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
 
     uk: {
@@ -88,6 +94,7 @@ export const locations = {
             chance: 0.1,
             label: 'Hurricane',
             service: 'Met Office',
+            allowClusters: false,
             names: [
                 'Arthur', 'Bertha', 'Cesar', 'Diana', 'Edouard', 'Fran', 'Gustav',
                 'Hortense', 'Isidore', 'Josephine', 'Klaus', 'Lili', 'Marco', 'Nana',
@@ -97,7 +104,8 @@ export const locations = {
         tsunami: {
             location: 'in the North Atlantic',
             service: 'ICG/NEAMTWS'
-        }
+        },
+        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
 
     india: {
@@ -114,6 +122,7 @@ export const locations = {
             chance: 0.1,
             label: 'Cyclone',
             service: 'Met Department',
+            allowClusters: false,
             names: [
                 'Andry', 'Anety', 'Bakoly', 'Bobalahy', 'Caboto', 'Celestina',
                 'Domoina', 'Ditra', 'Edoara', 'Esitera', 'Fanja', 'Feliksa', 'Galy',
@@ -123,7 +132,8 @@ export const locations = {
         tsunami: {
             location: 'in the Indian Ocean',
             service: 'IOTWS'
-        }
+        },
+        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
 
     china: {
@@ -140,6 +150,7 @@ export const locations = {
             chance: 0.1,
             label: 'Typhoon',
             service: 'CMA Beijing',
+            allowClusters: false,
             names: [
                 'Vernon', 'Wynn', 'Alex', 'Betty', 'Cary', 'Dinah', 'Ed',
                 'Freda', 'Gerald', 'Holly', 'Ike', 'June', 'Kelly', 'Lynn',
@@ -150,7 +161,8 @@ export const locations = {
         tsunami: {
             location: 'in the Philippine Sea',
             service: 'SOA Guangzhou'
-        }
+        },
+        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
 
     philippines: {
@@ -167,6 +179,7 @@ export const locations = {
             chance: 0.1,
             label: 'Cyclone',
             service: 'PAGASA',
+            allowClusters: false,
             names: [
                 'Aring', 'Asiang', 'Biring', 'Konsing', 'Ditang', 'Edeng',
                 'Gloring', 'Huaning', 'Isang', 'Lusing', 'Maring', 'Nitang',
@@ -177,7 +190,8 @@ export const locations = {
         tsunami: {
             location: 'near Guam',
             service: 'PHIVOLCS Quezon City'
-        }
+        },
+        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
 
     japan: {
@@ -194,6 +208,7 @@ export const locations = {
             chance: 0.1,
             label: 'Cyclone',
             service: 'Japan Meteorological Agency',
+            allowClusters: false,
             names: [
                 'Vernon', 'Wynn', 'Alex', 'Betty', 'Cary', 'Dinah', 'Ed',
                 'Freda', 'Gerald', 'Holly', 'Ike', 'June', 'Kelly', 'Lynn',
@@ -204,6 +219,7 @@ export const locations = {
         tsunami: {
             location: 'near Wake Island',
             service: 'JMA TW'
-        }
+        },
+        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
     }
 }
