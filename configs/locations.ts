@@ -25,7 +25,7 @@ export const locations = {
             location: 'in the Gulf of Alaska',
             service: 'PTWC Palmer'
         },
-        depths: [ 0, 0, 0, 1, 1, 1, 2, 2 ]
+        depths: [[ 3, 7 ], [ 3, 13 ], [ 2, 10 ]]
     },
 
     cuba: {
@@ -53,7 +53,7 @@ export const locations = {
             location: 'off the northern coast of Honduras',
             service: 'PTWC Miami'
         },
-        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+        depths: [[ 3, 7 ], [ 3, 13 ], [ 2, 10 ]]
     },
 
     chile: {
@@ -77,7 +77,7 @@ export const locations = {
             location: 'near Isla de Pascua',
             service: 'PTWC Santiago'
         },
-        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+        depths: [[ 3, 7 ], [ 3, 13 ], [ 2, 10 ]]
     },
 
     uk: {
@@ -105,7 +105,7 @@ export const locations = {
             location: 'in the North Atlantic',
             service: 'ICG/NEAMTWS'
         },
-        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+        depths: [[ 3, 7 ], [ 3, 13 ], [ 2, 10 ]]
     },
 
     india: {
@@ -133,7 +133,7 @@ export const locations = {
             location: 'in the Indian Ocean',
             service: 'IOTWS'
         },
-        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+        depths: [[ 8, 30 ]]
     },
 
     china: {
@@ -162,7 +162,7 @@ export const locations = {
             location: 'in the Philippine Sea',
             service: 'SOA Guangzhou'
         },
-        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+        depths: [[ 3, 7 ], [ 3, 13 ], [ 2, 10 ]]
     },
 
     philippines: {
@@ -191,7 +191,7 @@ export const locations = {
             location: 'near Guam',
             service: 'PHIVOLCS Quezon City'
         },
-        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+        depths: [[ 3, 6 ], [ 3, 12 ], [ 2, 9 ], [ 1, 6 ]]
     },
 
     japan: {
@@ -220,6 +220,6 @@ export const locations = {
             location: 'near Wake Island',
             service: 'JMA TW'
         },
-        depths: [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+        depths: [[ 2, 4 ], [ 3, 13 ], [ 3, 16 ]]
     }
 }

@@ -5,7 +5,7 @@ exports.game = {
     upgradeMax: 5,
     broadcastMaxLength: 280,
     bootableScore: 2,
-    commandeerThreshold: 6,
+    commandeerThreshold: 50,
     board: {
         width: 7,
         height: 8,
@@ -50,6 +50,7 @@ exports.game = {
         }
     },
     market: {
+        low: 12,
         min: 5,
         max: 75,
         initial: [0, 21, 21, 22, 23, 24, 25, 26, 27, 28]

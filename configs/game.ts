@@ -4,7 +4,7 @@ export const game = {
     upgradeMax: 5,              // Maximum number of increments for upgrades
     broadcastMaxLength: 280,    // Character limit for each chat message
     bootableScore: 2,           // Number of times a user must be skipped before they can be booted
-    commandeerThreshold: 6,     // Dice difference required to commandeer a boat
+    commandeerThreshold: 50,    // Dice difference required to commandeer a boat
 
     board: {
         width: 7,
@@ -55,6 +55,7 @@ export const game = {
     },
 
     market: {
+        low: 12,
         min: 5,
         max: 75,
         initial: [ 0, 21, 21, 22, 23, 24, 25, 26, 27, 28 ]
