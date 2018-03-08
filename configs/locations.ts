@@ -1,3 +1,17 @@
+/* Location Weather:
+    Alaska: More fog (2x), Average Storms (x), Less Hurricanes(0.8x)
+    Cuba: Average Fog (x), Average Storms (x), Lots of Hurricanes (3x)
+    Chile: Lots of Fog (3x), Average Storms (x), No Hurricanes (x)
+    UK: More Fog (2x), Higher Storms (1.2x), Low Hurricanes (0.3x)
+    India: Average Fog (x), Average Storms (x), Average Hurricanes (x)
+    China: More Fog (1.5x), Average Storms(x), More Hurricanes (2x)
+    Phillppines: Less Fog (.5x), Average Storms (x), Lots of Hurricanes (3x)
+    Japan: Average Fog (x), Average Storms (x), More Hurricanes (2x)
+*/
+
+const fogAvg = 0.1;
+const stormAvg = 0.3;
+const hurAvg = 0.1;
 export const locations = {
 
     alaska: {
@@ -5,13 +19,13 @@ export const locations = {
         isEnabled: true,
         fish: [ 'Crab', 'Herring', 'Pollock', 'Salmon', 'Trout' ],
         fog: {
-            chance: 0.1,
+            chance: (2 * fogAvg),
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
-            chance: 0.1,
+            chance: (0.8 * hurAvg),
             label: 'Hurricane',
             service: 'NWS Anchorage',
             allowClusters: false,
@@ -33,13 +47,13 @@ export const locations = {
         isEnabled: true,
         fish: [ 'Amberjack', 'Grouper', 'Mackerel', 'Marlin', 'Snapper' ],
         fog: {
-            chance: 0.3,
+            chance: fogAvg,
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
-            chance: 0.3,
+            chance: (3 * hurAvg),
             label: 'Hurricane',
             service: 'Instituto de Meteorología',
             allowClusters: false,
@@ -61,10 +75,10 @@ export const locations = {
         isEnabled: true,
         fish: [ 'Abalone', 'Anchovy', 'Hake', 'Salmon', 'Trout' ],
         fog: {
-            chance: 0.1,
+            chance: (3 * fogAvg),
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
             chance: 0,
@@ -85,13 +99,13 @@ export const locations = {
         isEnabled: true,
         fish: [ 'Cod', 'Haddock', 'Herring', 'Mackerel', 'Salmon' ],
         fog: {
-            chance: 0.1,
+            chance: (2 * fogAvg),
         },
         storms: {
-            chance: 0.3,
+            chance: (1.2 * stormAvg),
         },
         hurricanes: {
-            chance: 0.1,
+            chance: (0.3 * hurAvg),
             label: 'Hurricane',
             service: 'Met Office',
             allowClusters: false,
@@ -113,10 +127,10 @@ export const locations = {
         isEnabled: true,
         fish: [ 'Carp', 'Pomfret', 'Seabass', 'Snapper', 'Squid' ],
         fog: {
-            chance: 0.1,
+            chance: fogAvg,
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
             chance: 0.1,
@@ -141,13 +155,13 @@ export const locations = {
         isEnabled: true,
         fish: [ 'Carp', 'Eel', 'Flounder', 'Seabass', 'Sturgeon' ],
         fog: {
-            chance: 0.1,
+            chance: (1.5 * fogAvg),
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
-            chance: 0.1,
+            chance: (2 * hurAvg),
             label: 'Typhoon',
             service: 'CMA Beijing',
             allowClusters: false,
@@ -170,13 +184,13 @@ export const locations = {
         isEnabled: true,
         fish: [ 'Bonito', 'Grouper', 'Mackerel', 'Marlin', 'Tuna' ],
         fog: {
-            chance: 0.1,
+            chance: fogAvg,
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
-            chance: 0.1,
+            chance: (3 * hurAvg),
             label: 'Cyclone',
             service: 'PAGASA',
             allowClusters: false,
@@ -199,13 +213,13 @@ export const locations = {
         isEnabled: true,
         fish: [ 'Anchovy', 'Halibut', 'Mackerel', 'Seabream', 'Tuna' ],
         fog: {
-            chance: 0.1,
+            chance: fogAvg,
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
-            chance: 0.1,
+            chance: (2 * hurAvg),
             label: 'Cyclone',
             service: 'Japan Meteorological Agency',
             allowClusters: false,

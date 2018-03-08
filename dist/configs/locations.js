@@ -1,18 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var fogAvg = 0.1;
+var stormAvg = 0.3;
+var hurAvg = 0.1;
 exports.locations = {
     alaska: {
         label: 'Alaska',
         isEnabled: true,
         fish: ['Crab', 'Herring', 'Pollock', 'Salmon', 'Trout'],
         fog: {
-            chance: 0.1,
+            chance: (2 * fogAvg),
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
-            chance: 0.1,
+            chance: (0.8 * hurAvg),
             label: 'Hurricane',
             service: 'NWS Anchorage',
             allowClusters: false,
@@ -33,13 +36,13 @@ exports.locations = {
         isEnabled: true,
         fish: ['Amberjack', 'Grouper', 'Mackerel', 'Marlin', 'Snapper'],
         fog: {
-            chance: 0.3,
+            chance: fogAvg,
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
-            chance: 0.3,
+            chance: (3 * hurAvg),
             label: 'Hurricane',
             service: 'Instituto de Meteorología',
             allowClusters: false,
@@ -60,10 +63,10 @@ exports.locations = {
         isEnabled: true,
         fish: ['Abalone', 'Anchovy', 'Hake', 'Salmon', 'Trout'],
         fog: {
-            chance: 0.1,
+            chance: (3 * fogAvg),
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
             chance: 0,
@@ -83,13 +86,13 @@ exports.locations = {
         isEnabled: true,
         fish: ['Cod', 'Haddock', 'Herring', 'Mackerel', 'Salmon'],
         fog: {
-            chance: 0.1,
+            chance: (2 * fogAvg),
         },
         storms: {
-            chance: 0.3,
+            chance: (1.2 * stormAvg),
         },
         hurricanes: {
-            chance: 0.1,
+            chance: (0.3 * hurAvg),
             label: 'Hurricane',
             service: 'Met Office',
             allowClusters: false,
@@ -110,10 +113,10 @@ exports.locations = {
         isEnabled: true,
         fish: ['Carp', 'Pomfret', 'Seabass', 'Snapper', 'Squid'],
         fog: {
-            chance: 0.1,
+            chance: fogAvg,
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
             chance: 0.1,
@@ -137,13 +140,13 @@ exports.locations = {
         isEnabled: true,
         fish: ['Carp', 'Eel', 'Flounder', 'Seabass', 'Sturgeon'],
         fog: {
-            chance: 0.1,
+            chance: (1.5 * fogAvg),
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
-            chance: 0.1,
+            chance: (2 * hurAvg),
             label: 'Typhoon',
             service: 'CMA Beijing',
             allowClusters: false,
@@ -165,13 +168,13 @@ exports.locations = {
         isEnabled: true,
         fish: ['Bonito', 'Grouper', 'Mackerel', 'Marlin', 'Tuna'],
         fog: {
-            chance: 0.1,
+            chance: fogAvg,
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
-            chance: 0.1,
+            chance: (3 * hurAvg),
             label: 'Cyclone',
             service: 'PAGASA',
             allowClusters: false,
@@ -193,13 +196,13 @@ exports.locations = {
         isEnabled: true,
         fish: ['Anchovy', 'Halibut', 'Mackerel', 'Seabream', 'Tuna'],
         fog: {
-            chance: 0.1,
+            chance: fogAvg,
         },
         storms: {
-            chance: 0.3,
+            chance: stormAvg,
         },
         hurricanes: {
-            chance: 0.1,
+            chance: (2 * hurAvg),
             label: 'Cyclone',
             service: 'Japan Meteorological Agency',
             allowClusters: false,
