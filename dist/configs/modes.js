@@ -4,7 +4,7 @@ exports.modes = {
     'r-4p-5m': {
         name: 'Ranked 4 Player 5 Minutes',
         type: 'ranked',
-        isEnabled: true,
+        isEnabled: false,
         isRanked: true,
         isSolo: false,
         turnLength: 'minutes',
@@ -22,7 +22,7 @@ exports.modes = {
     'u-2p-25h': {
         name: 'Unranked 2 Player 25 Hours',
         type: 'unranked',
-        isEnabled: true,
+        isEnabled: false,
         turnLength: 'day',
         numOfPlayers: 2,
         attributes: [[2, 'Players'], [25, 'Hours']]
@@ -38,7 +38,7 @@ exports.modes = {
     'u-4p-25h': {
         name: 'Unranked 4 Player 25 Hours',
         type: 'unranked',
-        isEnabled: true,
+        isEnabled: false,
         turnLength: 'day',
         numOfPlayers: 4,
         attributes: [[4, 'Players'], [25, 'Hours']]
@@ -46,7 +46,7 @@ exports.modes = {
     'u-6p-5m': {
         name: 'Unranked 6 Player 5 Minutes',
         type: 'unranked',
-        isEnabled: true,
+        isEnabled: false,
         turnLength: 'minutes',
         numOfPlayers: 6,
         attributes: [[6, 'Players'], [5, 'Minutes']]
@@ -54,7 +54,7 @@ exports.modes = {
     'u-6p-25h': {
         name: 'Unranked 6 Player 25 Hours',
         type: 'unranked',
-        isEnabled: true,
+        isEnabled: false,
         turnLength: 'day',
         numOfPlayers: 6,
         attributes: [[6, 'Players'], [25, 'Hours']]

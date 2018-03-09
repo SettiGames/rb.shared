@@ -160,6 +160,7 @@ var RB;
         CommKey["move"] = "move";
         CommKey["newTurn"] = "newTurn";
         CommKey["repair"] = "repair";
+        CommKey["startGame"] = "startGame";
         CommKey["storm"] = "storm";
         CommKey["treasure"] = "treasure";
         CommKey["trophy"] = "trophy";
