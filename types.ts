@@ -476,6 +476,7 @@ export namespace RB {
         move = 'move',
         newTurn = 'newTurn',
         repair = 'repair',
+        startGame = 'startGame',
         storm = 'storm',
         treasure = 'treasure',
         trophy = 'trophy',
