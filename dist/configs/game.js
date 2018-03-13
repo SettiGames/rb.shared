@@ -50,7 +50,7 @@ exports.game = {
         }
     },
     market: {
-        low: 12,
+        low: 20,
         min: 5,
         max: 75,
         initial: [0, 21, 21, 22, 23, 24, 25, 26, 27, 28]

@@ -147,7 +147,7 @@ export const locations = {
             location: 'in the Indian Ocean',
             service: 'IOTWS'
         },
-        depths: [[ 8, 30 ]]
+        depths: [[ 3, 7 ], [ 3, 13 ], [ 2, 10 ]]
     },
 
     china: {
