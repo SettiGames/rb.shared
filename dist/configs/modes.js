@@ -12,7 +12,7 @@ exports.modes = {
         attributes: [[4, 'Players'], [5, 'Minutes']]
     },
     'u-2p-5m': {
-        name: 'Unranked 2 Player 5 Minutes',
+        name: 'Casual Quick 2 Players',
         type: 'unranked',
         isEnabled: true,
         turnLength: 'minutes',
@@ -20,7 +20,7 @@ exports.modes = {
         attributes: [[2, 'Players'], [5, 'Minutes']]
     },
     'u-2p-25h': {
-        name: 'Unranked 2 Player 25 Hours',
+        name: 'Casual 2 Players',
         type: 'unranked',
         isEnabled: false,
         turnLength: 'day',
@@ -28,7 +28,7 @@ exports.modes = {
         attributes: [[2, 'Players'], [25, 'Hours']]
     },
     'u-4p-5m': {
-        name: 'Unranked 4 Player 5 Minutes',
+        name: 'Casual Quick 4 Players',
         type: 'unranked',
         isEnabled: true,
         turnLength: 'minutes',
@@ -36,7 +36,7 @@ exports.modes = {
         attributes: [[4, 'Players'], [5, 'Minutes']]
     },
     'u-4p-25h': {
-        name: 'Unranked 4 Player 25 Hours',
+        name: 'Casual 4 Players',
         type: 'unranked',
         isEnabled: false,
         turnLength: 'day',
@@ -44,15 +44,15 @@ exports.modes = {
         attributes: [[4, 'Players'], [25, 'Hours']]
     },
     'u-6p-5m': {
-        name: 'Unranked 6 Player 5 Minutes',
+        name: 'Casual Quick 6 Players',
         type: 'unranked',
-        isEnabled: false,
+        isEnabled: true,
         turnLength: 'minutes',
         numOfPlayers: 6,
         attributes: [[6, 'Players'], [5, 'Minutes']]
     },
     'u-6p-25h': {
-        name: 'Unranked 6 Player 25 Hours',
+        name: 'Casual 6 Players',
         type: 'unranked',
         isEnabled: false,
         turnLength: 'day',

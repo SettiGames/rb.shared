@@ -4,41 +4,44 @@ import { Setti, RB } from './../types'
 
 export class Game {
     
-    slug: string
-    name: string
-    status: RB.GameStatus
-    rating: number
-    winner?: string
-    startDate: Date
-    numOfPlayers: number
-    isRanked: boolean
-    isPrivate: boolean
-    isSolo: boolean
-    invitees: string[]
-    turnLength: RB.TurnLength
-    turnTimer?: Date
-    gameDate: Date
-    turnOrder: string[]
-    resigned: string[]
-    location: string
-    fog: boolean
-    tsunamiWarning: boolean
-    turn: RB.Turn
-    players: Setti.StringMap<RB.Player>
-    market: number[]
-    weather: RB.Forecast[]
-    board: Setti.StringMap<RB.Space>
+    slug: string = null
+    name: string = null
+    status: RB.GameStatus = null
+    rating: number = null
+    winner?: string = null
+    startDate: Date = null
+    startTimer?: Date = null
+    numOfPlayers: number = null
+    isRanked: boolean = null
+    isPrivate: boolean = null
+    isCustom: boolean = null
+    isSolo: boolean = null
+    allowUpgrades: boolean = null
+    spectatorMode: RB.SpectatorMode = null
+    turnLength: RB.TurnLength = null
+    turnTimer?: Date = null
+    gameDate: Date = null
+    turnOrder: string[] = null
+    resigned: string[] = null
+    location: string = null
+    fog: boolean = null
+    tsunamiWarning: boolean = null
+    turn: RB.Turn = null
+    players: Setti.StringMap<RB.Player> = null
+    market: number[] = null
+    weather: RB.Forecast[] = null
+    board: Setti.StringMap<RB.Space> = null
     stats: {
         game: RB.GameStats,
         players: Setti.StringMap<RB.PlayerStats>,
         vessels: Setti.StringMap<RB.VesselStats>
-    }
+    } = null
 
     warning: RB.Warning
-    adjacents: RB.Adjacents
-    comm: Setti.StringMap<RB.CommItem[]>
     newsBroadcasts: RB.Broadcast[]
-    // actions
+    comm: Setti.StringMap<RB.CommItem[]>
+    adjacents: RB.Adjacents
+    hubActions: Setti.ActionData[]
 
     constructor(json?: any) {
         if (!json) {
@@ -66,7 +69,11 @@ export class Game {
 
     get displayLocation(): string {
         const location = config.locations[this.location]
-        return location.label || ''
+        return location.label
+    }
+
+    get locationData(): RB.Location {
+        return config.locations[this.location]
     }
 
     get vesselNames(): string[] {
@@ -87,7 +94,7 @@ export class Game {
     get turnDuration(): moment.Duration {
         switch(this.turnLength) {
             case RB.TurnLength.minutes:
-                return moment.duration(10, 'minutes')
+                return moment.duration(5, 'minutes')
             case RB.TurnLength.day:
                 return moment.duration(1, 'days')
             default:
@@ -103,14 +110,17 @@ export class Game {
         if (json.slug) this.slug = json.slug
         if (json.name) this.name = json.name
         if (json.status) this.status = json.status
-        if (json.winner) this.winner = json.winner
         if (json.rating) this.rating = json.rating
+        if (json.winner) this.winner = json.winner
         if (json.startDate) this.startDate = new Date(json.startDate)
+        if (json.startTimer) this.startTimer = new Date(json.startTimer)
         if (json.numOfPlayers) this.numOfPlayers = json.numOfPlayers
         if (json.isRanked !== undefined) this.isRanked = json.isRanked
         if (json.isPrivate !== undefined) this.isPrivate = json.isPrivate
+        if (json.isCustom !== undefined) this.isCustom = json.isCustom
         if (json.isSolo !== undefined) this.isSolo = json.isSolo
-        if (json.invitees) this.invitees = json.invitees
+        if (json.allowUpgrades !== undefined) this.allowUpgrades = json.allowUpgrades
+        if (json.spectatorMode) this.spectatorMode = json.spectatorMode
         if (json.turnLength) this.turnLength = json.turnLength
         if (json.turnTimer) this.turnTimer = new Date(json.turnTimer)
         if (json.gameDate) this.gameDate = new Date(json.gameDate)
@@ -127,8 +137,10 @@ export class Game {
         if (json.stats) this.stats = json.stats
 
         if (json.warning !== undefined) this.warning = json.warning
+        if (json.newsBroadcasts) this.newsBroadcasts = json.newsBroadcasts
         if (json.comm) this.comm = json.comm
         if (json.adjacents) this.adjacents = json.adjacents
+        if (json.hubActions) this.hubActions = json.hubActions
     }
 
 

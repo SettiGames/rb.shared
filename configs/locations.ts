@@ -1,3 +1,5 @@
+import { RB, Setti } from './../types'
+
 /* Location Weather:
     Alaska: More fog (2x), Average Storms (x), Less Hurricanes(0.8x)
     Cuba: Average Fog (x), Average Storms (x), Lots of Hurricanes (3x)
@@ -9,23 +11,25 @@
     Japan: Average Fog (x), Average Storms (x), More Hurricanes (2x)
 */
 
-const fogAvg = 0.1;
-const stormAvg = 0.3;
-const hurAvg = 0.1;
-export const locations = {
+const fogConstant = 0.1
+const stormConstant = 0.3
+const hurricaneConstant = 0.1
+
+export const locations: Setti.StringMap<RB.Location> = {
 
     alaska: {
         label: 'Alaska',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum. Pellentesque feugiat hendrerit aliquam.',
         isEnabled: true,
         fish: [ 'Crab', 'Herring', 'Pollock', 'Salmon', 'Trout' ],
         fog: {
-            chance: (2 * fogAvg),
+            chance: fogConstant * 2,
         },
         storms: {
-            chance: stormAvg,
+            chance: stormConstant,
         },
         hurricanes: {
-            chance: (0.8 * hurAvg),
+            chance: hurricaneConstant * 0.8,
             label: 'Hurricane',
             service: 'NWS Anchorage',
             allowClusters: false,
@@ -44,16 +48,17 @@ export const locations = {
 
     cuba: {
         label: 'Cuba',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum. Pellentesque feugiat hendrerit aliquam.',
         isEnabled: true,
         fish: [ 'Amberjack', 'Grouper', 'Mackerel', 'Marlin', 'Snapper' ],
         fog: {
-            chance: fogAvg,
+            chance: fogConstant,
         },
         storms: {
-            chance: stormAvg,
+            chance: stormConstant,
         },
         hurricanes: {
-            chance: (3 * hurAvg),
+            chance: hurricaneConstant * 3,
             label: 'Hurricane',
             service: 'Instituto de Meteorología',
             allowClusters: false,
@@ -72,13 +77,14 @@ export const locations = {
 
     chile: {
         label: 'Chile',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum. Pellentesque feugiat hendrerit aliquam.',
         isEnabled: true,
         fish: [ 'Abalone', 'Anchovy', 'Hake', 'Salmon', 'Trout' ],
         fog: {
-            chance: (3 * fogAvg),
+            chance: fogConstant * 3,
         },
         storms: {
-            chance: stormAvg,
+            chance: stormConstant,
         },
         hurricanes: {
             chance: 0,
@@ -96,16 +102,17 @@ export const locations = {
 
     uk: {
         label: 'UK',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum. Pellentesque feugiat hendrerit aliquam.',
         isEnabled: true,
         fish: [ 'Cod', 'Haddock', 'Herring', 'Mackerel', 'Salmon' ],
         fog: {
-            chance: (2 * fogAvg),
+            chance: fogConstant * 2,
         },
         storms: {
-            chance: (1.2 * stormAvg),
+            chance: stormConstant * 1.2,
         },
         hurricanes: {
-            chance: (0.3 * hurAvg),
+            chance: hurricaneConstant * 0.3,
             label: 'Hurricane',
             service: 'Met Office',
             allowClusters: false,
@@ -124,13 +131,14 @@ export const locations = {
 
     india: {
         label: 'India',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum. Pellentesque feugiat hendrerit aliquam.',
         isEnabled: true,
         fish: [ 'Carp', 'Pomfret', 'Seabass', 'Snapper', 'Squid' ],
         fog: {
-            chance: fogAvg,
+            chance: fogConstant,
         },
         storms: {
-            chance: stormAvg,
+            chance: stormConstant,
         },
         hurricanes: {
             chance: 0.1,
@@ -152,16 +160,17 @@ export const locations = {
 
     china: {
         label: 'China',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum. Pellentesque feugiat hendrerit aliquam.',
         isEnabled: true,
         fish: [ 'Carp', 'Eel', 'Flounder', 'Seabass', 'Sturgeon' ],
         fog: {
-            chance: (1.5 * fogAvg),
+            chance: fogConstant * 1.5,
         },
         storms: {
-            chance: stormAvg,
+            chance: stormConstant,
         },
         hurricanes: {
-            chance: (2 * hurAvg),
+            chance: hurricaneConstant * 2,
             label: 'Typhoon',
             service: 'CMA Beijing',
             allowClusters: false,
@@ -181,16 +190,17 @@ export const locations = {
 
     philippines: {
         label: 'Philippines',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum. Pellentesque feugiat hendrerit aliquam.',
         isEnabled: true,
         fish: [ 'Bonito', 'Grouper', 'Mackerel', 'Marlin', 'Tuna' ],
         fog: {
-            chance: fogAvg,
+            chance: fogConstant,
         },
         storms: {
-            chance: stormAvg,
+            chance: stormConstant,
         },
         hurricanes: {
-            chance: (3 * hurAvg),
+            chance: hurricaneConstant * 3,
             label: 'Cyclone',
             service: 'PAGASA',
             allowClusters: false,
@@ -205,21 +215,22 @@ export const locations = {
             location: 'near Guam',
             service: 'PHIVOLCS Quezon City'
         },
-        depths: [[ 3, 6 ], [ 3, 12 ], [ 2, 9 ], [ 1, 6 ]]
+        depths: [[ 2, 6 ], [ 3, 12 ], [ 2, 9 ], [ 1, 6 ]]
     },
 
     japan: {
         label: 'Japan',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum. Pellentesque feugiat hendrerit aliquam.',
         isEnabled: true,
         fish: [ 'Anchovy', 'Halibut', 'Mackerel', 'Seabream', 'Tuna' ],
         fog: {
-            chance: fogAvg,
+            chance: fogConstant,
         },
         storms: {
-            chance: stormAvg,
+            chance: stormConstant,
         },
         hurricanes: {
-            chance: (2 * hurAvg),
+            chance: hurricaneConstant * 2,
             label: 'Cyclone',
             service: 'Japan Meteorological Agency',
             allowClusters: false,

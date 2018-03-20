@@ -6,6 +6,7 @@ exports.game = {
     broadcastMaxLength: 280,
     bootableScore: 2,
     commandeerThreshold: 50,
+    startTimerLength: 20,
     board: {
         width: 7,
         height: 8,
@@ -59,18 +60,18 @@ exports.game = {
         max: 280
     },
     colors: {
-        'EEF4D7': 'White Whale',
-        '667A84': 'Battle Gray',
-        '1A1A1A': 'Abyss Black',
-        '492A15': 'Barnicle Brown',
-        'F4A2A2': 'Salmon Pink',
-        'B21D1D': 'Red Tide',
-        'D8743D': 'Rusty Hull',
-        'E9F225': 'Yellow Snapper',
-        '44D8B3': 'Sea Foam',
-        '067215': 'Seaweed Green',
-        '199EE0': 'Big Sky Blue',
-        '6E2C89': 'Purple Dusk'
+        'EEF4D7': 'White',
+        '667A84': 'Gray',
+        '1A1A1A': 'Black',
+        '693D20': 'Brown',
+        'CA8787': 'Pink',
+        'C93838': 'Red',
+        'D8743D': 'Rust',
+        'D8BB32': 'Yellow',
+        '3E6F2F': 'Green',
+        '52B39B': 'Sea Foam',
+        '468FBD': 'Blue',
+        '6544A0': 'Purple'
     },
     gameNames: [
         'Clash at Raider Bay', 'Battle in Raider Bay', 'The Raider Bay Dispute', 'A Difference of Opinion',

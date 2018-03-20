@@ -84,7 +84,7 @@ export namespace Setti {
 export namespace RB {
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    * Functions
+    * Actions
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum ActionType {
         abandon = 'abandon',
@@ -109,6 +109,20 @@ export namespace RB {
 
     export interface Action {
         (game: Game, username: string, input: any): void
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Hub Actions
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export enum HubActionType {
+        processGame = 'processGame',
+        removePlayer = 'removePlayer'
+    }
+
+    export interface HubAction {
+        (game: Game, input: any): void
     }
 
 
@@ -152,7 +166,6 @@ export namespace RB {
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum GameStatus {
         open = 'open',
-        fresh = 'fresh',
         active = 'active',
         finished = 'finished'
     }
@@ -160,6 +173,17 @@ export namespace RB {
     export enum TurnLength {
         minutes = 'minutes',
         day = 'day'
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Spectators
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export enum SpectatorMode {
+        none = 'none',
+        public = 'public',
+        player = 'player'
     }
 
 
@@ -312,10 +336,41 @@ export namespace RB {
 
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Location
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export interface Location {
+        label: string
+        description: string
+        isEnabled: boolean
+        fish: string[]
+        fog: {
+            chance: number
+        }
+        storms: {
+            chance: number
+        }
+        hurricanes: {
+            chance: number
+            label: string
+            service: string
+            allowClusters: boolean
+            names: string[]
+        }
+        tsunami: {
+            location: string
+            service: string
+        }
+        depths: [ number, number ][]
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     * News
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum NewsKey {
         newGame,
+        startGame,
         fog,
         collision,
         storm,
@@ -333,6 +388,7 @@ export namespace RB {
         pirateDefend,
         turnIn,
         newBoat,
+        newPlayer,
         treasure,
         remove,
         bribe,
@@ -474,9 +530,12 @@ export namespace RB {
         hurricane = 'hurricane',
         lose = 'lose',
         move = 'move',
+        newPlayer = 'newPlayer',
         newTurn = 'newTurn',
         repair = 'repair',
         startGame = 'startGame',
+        startStartTimer = 'startStartTimer',
+        cancelStartTimer = 'cancelStartTimer',
         storm = 'storm',
         treasure = 'treasure',
         trophy = 'trophy',
