@@ -93,11 +93,40 @@ var Game = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Game.prototype, "isBootable", {
+        get: function () {
+            var bootscoreIsHigh = this.players[this.turn.username].skipScore >= configs_1.config.game.bootableScore;
+            return this.isSkippable && (bootscoreIsHigh || this.isFirstTurn);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Game.prototype, "isFirstTurn", {
+        get: function () {
+            return this.gameDate.getTime() === new Date(1984, 8, 1).getTime();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Game.prototype, "displayTurnDuration", {
+        get: function () {
+            switch (this.turnLength) {
+                case types_1.RB.TurnLength.minutes:
+                    return [3, 'minutes'];
+                case types_1.RB.TurnLength.day:
+                    return [1, 'day'];
+                default:
+                    break;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(Game.prototype, "turnDuration", {
         get: function () {
             switch (this.turnLength) {
                 case types_1.RB.TurnLength.minutes:
-                    return moment.duration(5, 'minutes');
+                    return moment.duration(3, 'minutes');
                 case types_1.RB.TurnLength.day:
                     return moment.duration(1, 'days');
                 default:

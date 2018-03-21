@@ -90,11 +90,31 @@ export class Game {
         const threshold = moment().subtract(this.turnDuration)
         return moment(this.turnTimer).isBefore(threshold)
     }
+
+    get isBootable(): boolean {
+        const bootscoreIsHigh = this.players[this.turn.username].skipScore >= config.game.bootableScore
+        return this.isSkippable && (bootscoreIsHigh || this.isFirstTurn)
+    }
+
+    get isFirstTurn(): boolean {
+        return this.gameDate.getTime() === new Date(1984, 8, 1).getTime()
+    }
+
+    get displayTurnDuration(): [ number, string ] {
+        switch(this.turnLength) {
+            case RB.TurnLength.minutes:
+                return [ 3, 'minutes' ]
+            case RB.TurnLength.day:
+                return [ 1, 'day' ]
+            default:
+                break
+        }
+    }
     
     get turnDuration(): moment.Duration {
         switch(this.turnLength) {
             case RB.TurnLength.minutes:
-                return moment.duration(5, 'minutes')
+                return moment.duration(3, 'minutes')
             case RB.TurnLength.day:
                 return moment.duration(1, 'days')
             default:

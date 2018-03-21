@@ -122,7 +122,7 @@ export namespace RB {
     }
 
     export interface HubAction {
-        (game: Game, input: any): void
+        (game: MongooseGame, input: any): void
     }
 
 

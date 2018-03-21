@@ -9,7 +9,7 @@ export const modes = {
         isSolo: false,
         turnLength: 'minutes',
         numOfPlayers: 4,
-        attributes: [[ 4, 'Players' ], [ 5, 'Minutes' ]]
+        attributes: [[ 4, 'Players' ], [ 3, 'Minutes' ]]
     },
 
     // UNRANKED
@@ -20,7 +20,7 @@ export const modes = {
         isEnabled: true,
         turnLength: 'minutes',
         numOfPlayers: 2,
-        attributes: [[ 2, 'Players' ], [ 5, 'Minutes' ]]
+        attributes: [[ 2, 'Players' ], [ 3, 'Minutes' ]]
     },
 
     'u-2p-25h': {
@@ -38,7 +38,7 @@ export const modes = {
         isEnabled: true,
         turnLength: 'minutes',
         numOfPlayers: 4,
-        attributes: [[ 4, 'Players' ], [ 5, 'Minutes' ]]
+        attributes: [[ 4, 'Players' ], [ 3, 'Minutes' ]]
     },
 
     'u-4p-25h': {
@@ -56,7 +56,7 @@ export const modes = {
         isEnabled: true,
         turnLength: 'minutes',
         numOfPlayers: 6,
-        attributes: [[ 6, 'Players' ], [ 5, 'Minutes' ]]
+        attributes: [[ 6, 'Players' ], [ 3, 'Minutes' ]]
     },
 
     'u-6p-25h': {
