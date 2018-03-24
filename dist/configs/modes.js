@@ -15,6 +15,8 @@ exports.modes = {
         name: 'Casual Quick 2 Players',
         type: 'unranked',
         isEnabled: true,
+        isRanked: false,
+        isSolo: false,
         turnLength: 'minutes',
         numOfPlayers: 2,
         attributes: [[2, 'Players'], [3, 'Minutes']]
@@ -23,6 +25,8 @@ exports.modes = {
         name: 'Casual 2 Players',
         type: 'unranked',
         isEnabled: false,
+        isRanked: false,
+        isSolo: false,
         turnLength: 'day',
         numOfPlayers: 2,
         attributes: [[2, 'Players'], [25, 'Hours']]
@@ -31,6 +35,8 @@ exports.modes = {
         name: 'Casual Quick 4 Players',
         type: 'unranked',
         isEnabled: true,
+        isRanked: false,
+        isSolo: false,
         turnLength: 'minutes',
         numOfPlayers: 4,
         attributes: [[4, 'Players'], [3, 'Minutes']]
@@ -39,6 +45,8 @@ exports.modes = {
         name: 'Casual 4 Players',
         type: 'unranked',
         isEnabled: false,
+        isRanked: false,
+        isSolo: false,
         turnLength: 'day',
         numOfPlayers: 4,
         attributes: [[4, 'Players'], [25, 'Hours']]
@@ -47,6 +55,8 @@ exports.modes = {
         name: 'Casual Quick 6 Players',
         type: 'unranked',
         isEnabled: true,
+        isRanked: false,
+        isSolo: false,
         turnLength: 'minutes',
         numOfPlayers: 6,
         attributes: [[6, 'Players'], [3, 'Minutes']]
@@ -55,6 +65,8 @@ exports.modes = {
         name: 'Casual 6 Players',
         type: 'unranked',
         isEnabled: false,
+        isRanked: false,
+        isSolo: false,
         turnLength: 'day',
         numOfPlayers: 6,
         attributes: [[6, 'Players'], [25, 'Hours']]
@@ -63,6 +75,8 @@ exports.modes = {
         name: 'A Fortnight At Sea',
         type: 'solo',
         isEnabled: true,
+        isRanked: false,
+        isSolo: true,
         turnLength: 'day',
         numOfPlayers: 1,
         attributes: [[14, 'Days']]
@@ -71,6 +85,8 @@ exports.modes = {
         name: 'The Kraken',
         type: 'solo',
         isEnabled: false,
+        isRanked: false,
+        isSolo: true,
         turnLength: 'day',
         numOfPlayers: 1,
         attributes: [[14, 'Turns'], [1, 'Monster']]

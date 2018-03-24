@@ -37,11 +37,11 @@ export class Game {
         vessels: Setti.StringMap<RB.VesselStats>
     } = null
 
-    warning: RB.Warning
-    newsBroadcasts: RB.Broadcast[]
-    comm: Setti.StringMap<RB.CommItem[]>
-    adjacents: RB.Adjacents
-    hubActions: Setti.ActionData[]
+    warning: RB.Warning = null
+    newsBroadcasts: RB.Broadcast[] = null
+    comm: Setti.StringMap<RB.CommItem[]> = null
+    adjacents: RB.Adjacents = null
+    hubActions: Setti.ActionData[] = null
 
     constructor(json?: any) {
         if (!json) {
@@ -96,8 +96,16 @@ export class Game {
         return this.isSkippable && (bootscoreIsHigh || this.isFirstTurn)
     }
 
+    get startGameDate(): Date {
+        return new Date(1984, 8, 1)
+    }
+
     get isFirstTurn(): boolean {
-        return this.gameDate.getTime() === new Date(1984, 8, 1).getTime()
+        return this.gameDate.getTime() === this.startGameDate.getTime()
+    }
+
+    get dayCount(): number {
+        return moment(this.gameDate).diff(this.startGameDate, 'days') + 1
     }
 
     get displayTurnDuration(): [ number, string ] {

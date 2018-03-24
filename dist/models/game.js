@@ -33,6 +33,11 @@ var Game = (function () {
         this.weather = null;
         this.board = null;
         this.stats = null;
+        this.warning = null;
+        this.newsBroadcasts = null;
+        this.comm = null;
+        this.adjacents = null;
+        this.hubActions = null;
         if (!json) {
             return;
         }
@@ -101,9 +106,23 @@ var Game = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Game.prototype, "startGameDate", {
+        get: function () {
+            return new Date(1984, 8, 1);
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(Game.prototype, "isFirstTurn", {
         get: function () {
-            return this.gameDate.getTime() === new Date(1984, 8, 1).getTime();
+            return this.gameDate.getTime() === this.startGameDate.getTime();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(Game.prototype, "dayCount", {
+        get: function () {
+            return moment(this.gameDate).diff(this.startGameDate, 'days') + 1;
         },
         enumerable: true,
         configurable: true
