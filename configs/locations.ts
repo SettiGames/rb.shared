@@ -275,5 +275,38 @@ export const locations: Setti.StringMap<RB.Location> = {
             service: 'JMA TW'
         },
         depths: [[ 2, 4 ], [ 3, 13 ], [ 3, 16 ]]
-    }
+    },
+
+
+
+
+    // LEGACY, do a migration
+    easter_island: {
+        label: 'Easter Island',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        isEnabled: false,
+        fish: [ 'Flounder', 'Flying Fish', 'Morwong', 'Snapper', 'Trevally' ],
+        fog: {
+            chance: 0,
+        },
+        storms: {
+            chance: stormConstant,
+        },
+        hurricanes: {
+            chance: hurricaneConstant,
+            label: 'Hurricane',
+            service: 'Dirección Meteorológica',
+            allowClusters: false,
+            names: [
+                'Alma', 'Boris', 'Cristina', 'Douglas', 'Elida', 'Fausto', 'Genevieve',
+                'Hernan', 'Iselle', 'Julio', 'Kenna', 'Lowell', 'Marie', 'Norbert',
+                'Odile', 'Polo', 'Rachel', 'Simon', 'Trudy', 'Vance', 'Wallis'
+            ]
+        },
+        tsunami: {
+            location: 'in the South Pacific',
+            service: 'PTWC Miami'
+        },
+        depths: [[ 3, 7 ], [ 3, 13 ], [ 2, 10 ]]
+    },
 }
