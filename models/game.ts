@@ -32,9 +32,10 @@ export class Game {
     weather: RB.Forecast[] = null
     board: Setti.StringMap<RB.Space> = null
     stats: {
-        game: RB.GameStats,
-        players: Setti.StringMap<RB.PlayerStats>,
-        vessels: Setti.StringMap<RB.VesselStats>
+        game?: RB.GameStats,
+        players?: Setti.StringMap<RB.PlayerStats>,
+        vessels?: Setti.StringMap<RB.VesselStats>,
+        sorted?: RB.SortedStats
     } = null
 
     warning: RB.Warning = null

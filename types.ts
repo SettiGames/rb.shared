@@ -118,7 +118,8 @@ export namespace RB {
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum HubActionType {
         processGame = 'processGame',
-        removePlayer = 'removePlayer'
+        removePlayer = 'removePlayer',
+        soloProcessGame = 'soloProcessGame'
     }
 
     export interface HubAction {
@@ -500,6 +501,14 @@ export namespace RB {
         defenseFail?: number
         defenseRolls?: number[]
         collisions?: number
+    }
+
+    export enum SortedStatKey {
+        rank = 'rank'
+    }
+
+    export interface SortedStats {
+        rank?: number
     }
 
 

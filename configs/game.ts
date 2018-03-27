@@ -6,7 +6,6 @@ export const game = {
     bootableScore: 2,               // Number of times a user must be skipped before they can be booted
     commandeerThreshold: 50,        // Dice difference required to commandeer a boat
     startTimerLength: 20,           // Lenght of the start game timer in seconds
-    soloLocation: 'easter_island',
 
     board: {
         width: 7,
@@ -22,15 +21,15 @@ export const game = {
     },
 
     prices: {
-        bribe: 1000,
-        upgrade: 50,
-        repair: 10
+        bribe: 1000,                // Funds needed to buy a trophy
+        upgrade: 50,                // Base cost of scaling upgrades price (prices.upgrades * incrememnt)
+        repair: 10                  // Price of each repair increment
     },
 
     tsunami: {
-        eventThreshold: 15,     // Total fish in the bay before a tsunami can happen
-        warningThreshold: 25,   // Total fish when tsunami warning is issued
-        chance: 0.5             // Chance a tsunami will happen when eventThreshold is met
+        eventThreshold: 25,         // Total fish in the bay before a tsunami can happen
+        warningThreshold: 25,       // Total fish when tsunami warning is issued
+        chance: 0.5                 // Chance a tsunami will happen when eventThreshold is met
     },
 
     damage: {

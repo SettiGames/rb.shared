@@ -7,7 +7,6 @@ exports.game = {
     bootableScore: 2,
     commandeerThreshold: 50,
     startTimerLength: 20,
-    soloLocation: 'easter_island',
     board: {
         width: 7,
         height: 8,
@@ -25,7 +24,7 @@ exports.game = {
         repair: 10
     },
     tsunami: {
-        eventThreshold: 15,
+        eventThreshold: 25,
         warningThreshold: 25,
         chance: 0.5
     },

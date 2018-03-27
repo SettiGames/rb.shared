@@ -27,6 +27,7 @@ var RB;
     (function (HubActionType) {
         HubActionType["processGame"] = "processGame";
         HubActionType["removePlayer"] = "removePlayer";
+        HubActionType["soloProcessGame"] = "soloProcessGame";
     })(HubActionType = RB.HubActionType || (RB.HubActionType = {}));
     var GameStatus;
     (function (GameStatus) {
@@ -152,6 +153,10 @@ var RB;
         VesselStatKey["defenseRolls"] = "defenseRolls";
         VesselStatKey["collisions"] = "collisions";
     })(VesselStatKey = RB.VesselStatKey || (RB.VesselStatKey = {}));
+    var SortedStatKey;
+    (function (SortedStatKey) {
+        SortedStatKey["rank"] = "rank";
+    })(SortedStatKey = RB.SortedStatKey || (RB.SortedStatKey = {}));
     var SpaceAction;
     (function (SpaceAction) {
         SpaceAction["move"] = "M";
