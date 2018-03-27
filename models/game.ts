@@ -98,7 +98,7 @@ export class Game {
     }
 
     get startGameDate(): Date {
-        return new Date(1984, 8, 1)
+        return new Date(Date.UTC(1984, 8, 1))
     }
 
     get isFirstTurn(): boolean {

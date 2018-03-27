@@ -108,7 +108,7 @@ var Game = (function () {
     });
     Object.defineProperty(Game.prototype, "startGameDate", {
         get: function () {
-            return new Date(1984, 8, 1);
+            return new Date(Date.UTC(1984, 8, 1));
         },
         enumerable: true,
         configurable: true
