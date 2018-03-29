@@ -7,6 +7,7 @@ exports.locations = {
     solo: {
         label: 'Easter Island',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: ['None', 'Average', 'Average', 'Average'],
         isEnabled: false,
         fish: ['Flounder', 'Flying Fish', 'Morwong', 'Snapper', 'Trevally'],
         fog: {
@@ -35,6 +36,7 @@ exports.locations = {
     alaska: {
         label: 'Alaska',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: ['Heavy', 'Average', 'Average', 'Average'],
         isEnabled: true,
         fish: ['Crab', 'Herring', 'Pollock', 'Salmon', 'Trout'],
         fog: {
@@ -63,6 +65,7 @@ exports.locations = {
     cuba: {
         label: 'Cuba',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: ['Average', 'Average', 'Heavy', 'Average'],
         isEnabled: true,
         fish: ['Amberjack', 'Grouper', 'Mackerel', 'Marlin', 'Snapper'],
         fog: {
@@ -91,6 +94,7 @@ exports.locations = {
     chile: {
         label: 'Chile',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: ['Heavy', 'Average', 'None', 'Average'],
         isEnabled: true,
         fish: ['Abalone', 'Anchovy', 'Hake', 'Salmon', 'Trout'],
         fog: {
@@ -115,6 +119,7 @@ exports.locations = {
     uk: {
         label: 'UK',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: ['Heavy', 'Average', 'Light', 'Average'],
         isEnabled: true,
         fish: ['Cod', 'Haddock', 'Herring', 'Mackerel', 'Salmon'],
         fog: {
@@ -143,6 +148,7 @@ exports.locations = {
     india: {
         label: 'India',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: ['Average', 'Average', 'Rare', 'Average'],
         isEnabled: true,
         fish: ['Carp', 'Pomfret', 'Seabass', 'Snapper', 'Squid'],
         fog: {
@@ -171,6 +177,7 @@ exports.locations = {
     china: {
         label: 'China',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: ['Heavy', 'Average', 'Heavy', 'Average'],
         isEnabled: true,
         fish: ['Carp', 'Eel', 'Flounder', 'Seabass', 'Sturgeon'],
         fog: {
@@ -200,6 +207,7 @@ exports.locations = {
     philippines: {
         label: 'Philippines',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: ['Average', 'Average', 'Heavy', 'Average'],
         isEnabled: true,
         fish: ['Bonito', 'Grouper', 'Mackerel', 'Marlin', 'Tuna'],
         fog: {
@@ -229,6 +237,7 @@ exports.locations = {
     japan: {
         label: 'Japan',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: ['Average', 'Average', 'Heavy', 'Average'],
         isEnabled: true,
         fish: ['Anchovy', 'Halibut', 'Mackerel', 'Seabream', 'Tuna'],
         fog: {
@@ -258,6 +267,7 @@ exports.locations = {
     easter_island: {
         label: 'Easter Island',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: ['None', 'Average', 'Average', 'Average'],
         isEnabled: false,
         fish: ['Flounder', 'Flying Fish', 'Morwong', 'Snapper', 'Trevally'],
         fog: {

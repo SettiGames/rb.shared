@@ -20,6 +20,7 @@ export const locations: Setti.StringMap<RB.Location> = {
     solo: {
         label: 'Easter Island',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: [ 'None', 'Average', 'Average', 'Average' ],
         isEnabled: false,
         fish: [ 'Flounder', 'Flying Fish', 'Morwong', 'Snapper', 'Trevally' ],
         fog: {
@@ -49,6 +50,7 @@ export const locations: Setti.StringMap<RB.Location> = {
     alaska: {
         label: 'Alaska',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: [ 'Heavy', 'Average', 'Average', 'Average' ],
         isEnabled: true,
         fish: [ 'Crab', 'Herring', 'Pollock', 'Salmon', 'Trout' ],
         fog: {
@@ -78,6 +80,7 @@ export const locations: Setti.StringMap<RB.Location> = {
     cuba: {
         label: 'Cuba',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: [ 'Average', 'Average', 'Heavy', 'Average' ],
         isEnabled: true,
         fish: [ 'Amberjack', 'Grouper', 'Mackerel', 'Marlin', 'Snapper' ],
         fog: {
@@ -107,6 +110,7 @@ export const locations: Setti.StringMap<RB.Location> = {
     chile: {
         label: 'Chile',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: [ 'Heavy', 'Average', 'None', 'Average' ],
         isEnabled: true,
         fish: [ 'Abalone', 'Anchovy', 'Hake', 'Salmon', 'Trout' ],
         fog: {
@@ -132,6 +136,7 @@ export const locations: Setti.StringMap<RB.Location> = {
     uk: {
         label: 'UK',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: [ 'Heavy', 'Average', 'Light', 'Average' ],
         isEnabled: true,
         fish: [ 'Cod', 'Haddock', 'Herring', 'Mackerel', 'Salmon' ],
         fog: {
@@ -161,6 +166,7 @@ export const locations: Setti.StringMap<RB.Location> = {
     india: {
         label: 'India',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: [ 'Average', 'Average', 'Rare', 'Average' ],
         isEnabled: true,
         fish: [ 'Carp', 'Pomfret', 'Seabass', 'Snapper', 'Squid' ],
         fog: {
@@ -190,6 +196,7 @@ export const locations: Setti.StringMap<RB.Location> = {
     china: {
         label: 'China',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: [ 'Heavy', 'Average', 'Heavy', 'Average' ],
         isEnabled: true,
         fish: [ 'Carp', 'Eel', 'Flounder', 'Seabass', 'Sturgeon' ],
         fog: {
@@ -220,6 +227,7 @@ export const locations: Setti.StringMap<RB.Location> = {
     philippines: {
         label: 'Philippines',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: [ 'Average', 'Average', 'Heavy', 'Average' ],
         isEnabled: true,
         fish: [ 'Bonito', 'Grouper', 'Mackerel', 'Marlin', 'Tuna' ],
         fog: {
@@ -250,6 +258,7 @@ export const locations: Setti.StringMap<RB.Location> = {
     japan: {
         label: 'Japan',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: [ 'Average', 'Average', 'Heavy', 'Average' ],
         isEnabled: true,
         fish: [ 'Anchovy', 'Halibut', 'Mackerel', 'Seabream', 'Tuna' ],
         fog: {
@@ -284,6 +293,7 @@ export const locations: Setti.StringMap<RB.Location> = {
     easter_island: {
         label: 'Easter Island',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus consequat erat ut interdum molestie. Nam in dictum enim. Nunc aliquam mi at facilisis dictum.',
+        levels: [ 'None', 'Average', 'Average', 'Average' ],
         isEnabled: false,
         fish: [ 'Flounder', 'Flying Fish', 'Morwong', 'Snapper', 'Trevally' ],
         fog: {

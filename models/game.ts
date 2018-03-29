@@ -60,6 +60,10 @@ export class Game {
         return config.locations[this.location].fish
     }
 
+    get soloPlayer(): RB.Player {
+        return this.players[Object.keys(this.players)[0]]
+    }
+
     get displayStartDate(): string {
         return moment(this.startDate).format('MM/DD/YYYY')
     }

@@ -50,6 +50,13 @@ var Game = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Game.prototype, "soloPlayer", {
+        get: function () {
+            return this.players[Object.keys(this.players)[0]];
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(Game.prototype, "displayStartDate", {
         get: function () {
             return moment(this.startDate).format('MM/DD/YYYY');

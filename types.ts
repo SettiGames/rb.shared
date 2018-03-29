@@ -342,6 +342,7 @@ export namespace RB {
     export interface Location {
         label: string
         description: string
+        levels: string[],
         isEnabled: boolean
         fish: string[]
         fog: {
@@ -450,6 +451,7 @@ export namespace RB {
         earnings?: number
         treasure?: number
         luck?: number
+        luckRolls?: number
         attackSuccess?: number
         attackFail?: number
         attackRolls?: number[]
