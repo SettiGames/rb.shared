@@ -7,6 +7,7 @@ exports.game = {
     bootableScore: 2,
     commandeerThreshold: 50,
     startTimerLength: 20,
+    honeyHoleTargetDay: 5,
     board: {
         width: 7,
         height: 8,

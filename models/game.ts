@@ -31,6 +31,7 @@ export class Game {
     market: number[] = null
     weather: RB.Forecast[] = null
     board: Setti.StringMap<RB.Space> = null
+    honeyHole: string = null
     stats: {
         game?: RB.GameStats,
         players?: Setti.StringMap<RB.PlayerStats>,
@@ -167,6 +168,7 @@ export class Game {
         if (json.market) this.market = json.market
         if (json.weather) this.weather = json.weather
         if (json.board) this.board = json.board
+        if (json.honeyHole) this.honeyHole = json.honeyHole
         if (json.stats) this.stats = json.stats
 
         if (json.warning !== undefined) this.warning = json.warning

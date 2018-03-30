@@ -105,7 +105,7 @@ exports.locations = {
         },
         hurricanes: {
             chance: 0,
-            label: '',
+            label: 'Hurricane',
             service: 'Dirección Meteorológica',
             allowClusters: false,
             names: []

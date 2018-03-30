@@ -32,6 +32,7 @@ var Game = (function () {
         this.market = null;
         this.weather = null;
         this.board = null;
+        this.honeyHole = null;
         this.stats = null;
         this.warning = null;
         this.newsBroadcasts = null;
@@ -217,6 +218,8 @@ var Game = (function () {
             this.weather = json.weather;
         if (json.board)
             this.board = json.board;
+        if (json.honeyHole)
+            this.honeyHole = json.honeyHole;
         if (json.stats)
             this.stats = json.stats;
         if (json.warning !== undefined)
