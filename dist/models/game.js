@@ -218,7 +218,7 @@ var Game = (function () {
             this.weather = json.weather;
         if (json.board)
             this.board = json.board;
-        if (json.honeyHole)
+        if (json.honeyHole !== undefined)
             this.honeyHole = json.honeyHole;
         if (json.stats)
             this.stats = json.stats;

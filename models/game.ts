@@ -168,7 +168,7 @@ export class Game {
         if (json.market) this.market = json.market
         if (json.weather) this.weather = json.weather
         if (json.board) this.board = json.board
-        if (json.honeyHole) this.honeyHole = json.honeyHole
+        if (json.honeyHole !== undefined) this.honeyHole = json.honeyHole
         if (json.stats) this.stats = json.stats
 
         if (json.warning !== undefined) this.warning = json.warning
