@@ -552,6 +552,7 @@ export namespace RB {
         trophy = 'trophy',
         tsunami = 'tsunami',
         turnIn = 'turnIn',
+        upgrade = 'upgrade',
         win = 'win'
     }
 

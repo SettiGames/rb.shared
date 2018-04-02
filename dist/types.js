@@ -186,6 +186,7 @@ var RB;
         CommKey["trophy"] = "trophy";
         CommKey["tsunami"] = "tsunami";
         CommKey["turnIn"] = "turnIn";
+        CommKey["upgrade"] = "upgrade";
         CommKey["win"] = "win";
     })(CommKey = RB.CommKey || (RB.CommKey = {}));
 })(RB = exports.RB || (exports.RB = {}));
