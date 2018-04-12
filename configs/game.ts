@@ -4,7 +4,6 @@ export const game = {
     upgradeMax: 5,                  // Maximum number of increments for upgrades
     broadcastMaxLength: 280,        // Character limit for each chat message
     bootableScore: 2,               // Number of times a user must be skipped before they can be booted
-    commandeerThreshold: 50,        // Dice difference required to commandeer a boat
     startTimerLength: 20,           // Length of the start game timer in seconds
     honeyHoleTargetDay: 5,          // Ideal number of days between honey holes
 

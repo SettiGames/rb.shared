@@ -5,7 +5,6 @@ exports.game = {
     upgradeMax: 5,
     broadcastMaxLength: 280,
     bootableScore: 2,
-    commandeerThreshold: 50,
     startTimerLength: 20,
     honeyHoleTargetDay: 5,
     board: {

@@ -90,7 +90,6 @@ export namespace RB {
         abandon = 'abandon',
         boot = 'boot',
         bribe = 'bribe',
-        commandeer = 'commandeer',
         endTurn = 'endTurn',
         fishFind = 'fishFind',
         fish = 'fish',
@@ -244,8 +243,7 @@ export namespace RB {
         trophies?: boolean[]
         explored?: string[]
         fished?: string[]
-        newBoat?: boolean
-        canCommandeer?: string
+        isSunk?: RB.DamageType
         damage?: Damage
         upgrades?: Upgrades
         well?: Setti.NumberMap<number>[]
@@ -258,13 +256,12 @@ export namespace RB {
     * Damage
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum DamageType {
-        collision,
-        storm,
-        hurricane,
-        tsunami,
-        attack,
-        abandon,
-        commandeer
+        collision = 'collision',
+        storm = 'storm',
+        hurricane = 'hurricane',
+        tsunami = 'tsunami',
+        attack = 'attack',
+        abandon = 'abandon'
     }
 
     export interface Damage {
@@ -385,7 +382,6 @@ export namespace RB {
         sinkTsunami,
         sinkAttack,
         sinkAbandon,
-        sinkCommandeer,
         pirateAttack,
         pirateDefend,
         turnIn,
@@ -434,7 +430,6 @@ export namespace RB {
         biggestAttack = 'biggestAttack',
         fishStolen = 'fishStolen',
         bribe = 'bribe',
-        commandeer = 'commandeer',
         defenseSuccess = 'defenseSuccess',
         defenseFail = 'defenseFail',
         defenseRolls = 'defenseRolls',
@@ -458,7 +453,6 @@ export namespace RB {
         biggestAttack?: Setti.StringMap<string | number>
         fishStolen?: number
         bribe?: number
-        commandeer?: number
         defenseSuccess?: number
         defenseFail?: number
         defenseRolls?: number[]
@@ -479,7 +473,6 @@ export namespace RB {
         biggestAttack = 'biggestAttack',
         fishStolen = 'fishStolen',
         moneyStolen = 'moneyStolen',
-        commandeer = 'commandeer',
         defenseSuccess = 'defenseSuccess',
         defenseFail = 'defenseFail',
         defenseRolls = 'defenseRolls',
@@ -498,7 +491,6 @@ export namespace RB {
         biggestAttack?: Setti.StringMap<string | number>
         fishStolen?: number
         moneyStolen?: number
-        commandeer?: number
         defenseSuccess?: number
         defenseFail?: number
         defenseRolls?: number[]
@@ -531,10 +523,8 @@ export namespace RB {
     }
 
     export enum CommKey {
-        attackResult = 'attackResult',
+        battle = 'battle',
         collision = 'collision',
-        commandeer = 'commandeer',
-        defenseResult = 'defenseResult',
         fishFind = 'fishFind',
         fishFail = 'fishFail',
         fishSuccess = 'fishSuccess',
