@@ -16,7 +16,7 @@ export const game = {
     },
 
     treasure: {
-        min: 25,
+        min: 50,
         max: 300
     },
 
@@ -47,7 +47,7 @@ export const game = {
         },
         tsunami: {
             min: 1,
-            max: 3
+            max: 4
         },
         attack: {
             min: 1,

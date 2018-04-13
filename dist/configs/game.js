@@ -15,7 +15,7 @@ exports.game = {
         maxCatch: 5
     },
     treasure: {
-        min: 25,
+        min: 50,
         max: 300
     },
     prices: {
@@ -43,7 +43,7 @@ exports.game = {
         },
         tsunami: {
             min: 1,
-            max: 3
+            max: 4
         },
         attack: {
             min: 1,
