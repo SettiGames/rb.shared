@@ -39,6 +39,7 @@ var Game = (function () {
         this.comm = null;
         this.adjacents = null;
         this.hubActions = null;
+        this.emotes = null;
         if (!json) {
             return;
         }

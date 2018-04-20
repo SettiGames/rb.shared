@@ -44,6 +44,11 @@ export class Game {
     comm: Setti.StringMap<RB.CommItem[]> = null
     adjacents: RB.Adjacents = null
     hubActions: Setti.ActionData[] = null
+    emotes: Setti.StringMap<{
+        public?: RB.Emote,
+        adjacents?: RB.Emote,
+        player?: RB.Emote
+    }> = null
 
     constructor(json?: any) {
         if (!json) {

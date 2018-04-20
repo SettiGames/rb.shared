@@ -61,6 +61,20 @@ var RB;
         DamageType["attack"] = "attack";
         DamageType["abandon"] = "abandon";
     })(DamageType = RB.DamageType || (RB.DamageType = {}));
+    var EmoteKey;
+    (function (EmoteKey) {
+        EmoteKey["battle"] = "battle";
+        EmoteKey["cast"] = "cast";
+        EmoteKey["castEmpty"] = "castEmpty";
+        EmoteKey["castSuccess"] = "castSuccess";
+        EmoteKey["castTreasure"] = "castTreasure";
+    })(EmoteKey = RB.EmoteKey || (RB.EmoteKey = {}));
+    var EmoteTarget;
+    (function (EmoteTarget) {
+        EmoteTarget[EmoteTarget["public"] = 0] = "public";
+        EmoteTarget[EmoteTarget["adjacents"] = 1] = "adjacents";
+        EmoteTarget[EmoteTarget["player"] = 2] = "player";
+    })(EmoteTarget = RB.EmoteTarget || (RB.EmoteTarget = {}));
     var BroadcastType;
     (function (BroadcastType) {
         BroadcastType["chat"] = "chat";
