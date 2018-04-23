@@ -22,12 +22,12 @@ export class Game {
     turnTimer?: Date = null
     gameDate: Date = null
     turnOrder: string[] = null
-    resigned: string[] = null
     location: string = null
     fog: boolean = null
     tsunamiWarning: boolean = null
     turn: RB.Turn = null
     players: Setti.StringMap<RB.Player> = null
+    resigned: Setti.StringMap<RB.Player> = null
     market: number[] = null
     weather: RB.Forecast[] = null
     board: Setti.StringMap<RB.Space> = null
