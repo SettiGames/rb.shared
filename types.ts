@@ -248,6 +248,7 @@ export namespace RB {
         upgrades?: Upgrades
         well?: Setti.NumberMap<number>[]
         skipScore?: number
+        emote: Emote
     }
 
 
@@ -293,6 +294,37 @@ export namespace RB {
     export interface Catch {
         type: number
         count: number
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Emote
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export enum EmoteKey {
+        battle = 'battle',
+        cast = 'cast',
+        castEmpty = 'castEmpty',
+        castSuccess = 'castSuccess',
+        castTreasure = 'castTreasure',
+        damage = 'damage',
+        deadFish = 'deadFish',
+        find = 'find',
+        repair = 'repair',
+        trophy = 'trophy',
+        turnIn = 'turnIn',
+        upgrade = 'upgrade'
+    }
+
+    export enum EmoteTarget {
+        public,
+        adjacents,
+        player
+    }
+
+    export interface Emote {
+        key: EmoteKey,
+        data: Setti.StringMap<any>
     }
 
 

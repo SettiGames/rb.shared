@@ -68,6 +68,13 @@ var RB;
         EmoteKey["castEmpty"] = "castEmpty";
         EmoteKey["castSuccess"] = "castSuccess";
         EmoteKey["castTreasure"] = "castTreasure";
+        EmoteKey["damage"] = "damage";
+        EmoteKey["deadFish"] = "deadFish";
+        EmoteKey["find"] = "find";
+        EmoteKey["repair"] = "repair";
+        EmoteKey["trophy"] = "trophy";
+        EmoteKey["turnIn"] = "turnIn";
+        EmoteKey["upgrade"] = "upgrade";
     })(EmoteKey = RB.EmoteKey || (RB.EmoteKey = {}));
     var EmoteTarget;
     (function (EmoteTarget) {
