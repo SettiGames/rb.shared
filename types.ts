@@ -116,6 +116,7 @@ export namespace RB {
     * Hub Actions
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum HubActionType {
+        doubloons = 'doubloons',
         processGame = 'processGame',
         removePlayer = 'removePlayer',
         soloProcessGame = 'soloProcessGame'
@@ -307,6 +308,7 @@ export namespace RB {
         castEmpty = 'castEmpty',
         castSuccess = 'castSuccess',
         castTreasure = 'castTreasure',
+        castDoubloons = 'castDoubloons',
         damage = 'damage',
         deadFish = 'deadFish',
         find = 'find',
@@ -455,6 +457,7 @@ export namespace RB {
         fishCaught = 'fishCaught',
         earnings = 'earnings',
         treasure = 'treasure',
+        doubloons = 'doubloons',
         luck = 'luck',
         attackSuccess = 'attackSuccess',
         attackFail = 'attackFail',
@@ -477,6 +480,7 @@ export namespace RB {
         fishCaught?: number
         earnings?: number
         treasure?: number
+        doubloons?: number
         luck?: number
         luckRolls?: number
         attackSuccess?: number
@@ -557,6 +561,7 @@ export namespace RB {
     export enum CommKey {
         battle = 'battle',
         collision = 'collision',
+        doubloons = 'doubloons',
         fishFind = 'fishFind',
         fishFail = 'fishFail',
         fishSuccess = 'fishSuccess',

@@ -20,6 +20,26 @@ export const game = {
         max: 300
     },
 
+    doubloons: {
+        solo: [
+            [ 50, 0.001 ],
+            [ 5,  0.03  ],
+            [ 1,  0.25 ]
+        ],
+    
+        unranked: [
+            [ 50, 0.005 ],
+            [ 5,  0.8  ],
+            [ 1,  0.5 ]
+        ],
+    
+        ranked: [
+            [ 50, 0.01 ],
+            [ 5,  0.1  ],
+            [ 1,  0.5 ]
+        ]
+    },
+
     prices: {
         bribe: 1000,                // Funds needed to buy a trophy
         upgrade: 50,                // Base cost of scaling upgrades price (prices.upgrades * incrememnt)
