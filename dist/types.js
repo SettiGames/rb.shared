@@ -25,6 +25,7 @@ var RB;
     var HubActionType;
     (function (HubActionType) {
         HubActionType["doubloons"] = "doubloons";
+        HubActionType["newTurn"] = "newTurn";
         HubActionType["processGame"] = "processGame";
         HubActionType["removePlayer"] = "removePlayer";
         HubActionType["soloProcessGame"] = "soloProcessGame";

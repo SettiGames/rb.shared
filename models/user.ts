@@ -16,6 +16,11 @@ export class User {
     resigned?: string[]
     vessels?: Vessel[]
 
+    yourTurn?: {
+        slug: string,
+        name: string
+    }[]
+
     constructor(json?: any) {
         if (!json) {
             return
@@ -41,6 +46,8 @@ export class User {
         if (json.loses) this.loses = json.loses
         if (json.resigned) this.resigned = json.resigned
         if (json.vessels) this.vessels = this.parseVessels(json.vessels)
+        
+        if (json.yourTurn) this.yourTurn = json.yourTurn
     }
 
     private parseVessels(json: any): Vessel[] {

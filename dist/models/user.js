@@ -33,6 +33,8 @@ var User = (function () {
             this.resigned = json.resigned;
         if (json.vessels)
             this.vessels = this.parseVessels(json.vessels);
+        if (json.yourTurn)
+            this.yourTurn = json.yourTurn;
     };
     User.prototype.parseVessels = function (json) {
         if (!json || !json.length) {
