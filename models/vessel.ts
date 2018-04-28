@@ -1,5 +1,6 @@
 import { User } from './user'
 import { config } from './../configs'
+import { RB } from './../types'
 
 export class Vessel {
 
@@ -24,20 +25,32 @@ export class Vessel {
 
     // Computed
 
-    get color() {
-        return this.colors[0]
+    get preferredColor(): string {
+        return this.colors[0] || null
     }
 
-    get typeName() {
+    get typeName(): string {
         return config.vessels[this.type].name
     }
 
-    get effect() {
-        return config.vessels[this.type].effect
+    get flags(): string[] {
+        return config.vessels[this.type].flags
     }
 
     get shapes() {
         return config.vessels[this.type].shapes
+    }
+
+
+
+    // Methods
+
+    hasFlag(flag: RB.VesselFlag): boolean {
+        if (!this.flags) {
+            return false
+        }
+
+        return this.flags.indexOf(flag) !== -1
     }
 
 

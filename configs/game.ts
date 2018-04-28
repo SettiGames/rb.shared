@@ -1,7 +1,7 @@
 export const game = {
 
     initialFunds: 50,               // Amount of funds a players starts with
-    upgradeMax: 5,                  // Maximum number of increments for upgrades
+    upgradeMax: 4,                  // Maximum number of increments for upgrades
     broadcastMaxLength: 280,        // Character limit for each chat message
     bootableScore: 2,               // Number of times a user must be skipped before they can be booted
     startTimerLength: 20,           // Length of the start game timer in seconds

@@ -38,7 +38,7 @@ var User = (function () {
     };
     User.prototype.parseVessels = function (json) {
         if (!json || !json.length) {
-            return;
+            return [];
         }
         return json.map(function (item) {
             return new vessel_1.Vessel(item);

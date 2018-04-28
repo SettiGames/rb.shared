@@ -52,7 +52,7 @@ export class User {
 
     private parseVessels(json: any): Vessel[] {
         if (!json || !json.length) {
-            return
+            return []
         }
 
         return json.map((item) => {

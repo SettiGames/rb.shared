@@ -1,5 +1,6 @@
 import * as moment from 'moment'
 import { config } from './../configs'
+import { Player } from './player'
 import { Setti, RB } from './../types'
 
 export class Game {
@@ -26,8 +27,8 @@ export class Game {
     fog: boolean = null
     tsunamiWarning: boolean = null
     turn: RB.Turn = null
-    players: Setti.StringMap<RB.Player> = null
-    resigned: Setti.StringMap<RB.Player> = null
+    players: Setti.StringMap<Player> = null
+    resigned: Setti.StringMap<Player> = null
     market: number[] = null
     weather: RB.Forecast[] = null
     board: Setti.StringMap<RB.Space> = null
@@ -66,7 +67,7 @@ export class Game {
         return config.locations[this.location].fish
     }
 
-    get soloPlayer(): RB.Player {
+    get soloPlayer(): Player {
         return this.players[Object.keys(this.players)[0]]
     }
 
@@ -164,12 +165,12 @@ export class Game {
         if (json.turnTimer) this.turnTimer = new Date(json.turnTimer)
         if (json.gameDate) this.gameDate = new Date(json.gameDate)
         if (json.turnOrder) this.turnOrder = json.turnOrder
-        if (json.resigned) this.resigned = json.resigned
+        if (json.resigned) this.resigned = this.parsePlayers(json.resigned)
         if (json.location) this.location = json.location
         if (json.fog !== undefined) this.fog = json.fog
         if (json.tsunamiWarning !== undefined) this.tsunamiWarning = json.tsunamiWarning
         if (json.turn) this.turn = json.turn
-        if (json.players) this.players = json.players
+        if (json.players) this.players = this.parsePlayers(json.players)
         if (json.market) this.market = json.market
         if (json.weather) this.weather = json.weather
         if (json.board) this.board = json.board
@@ -183,12 +184,22 @@ export class Game {
         if (json.hubActions) this.hubActions = json.hubActions
     }
 
+    private parsePlayers(json): Setti.StringMap<Player> {
+        let players: Setti.StringMap<Player> = {}
+
+        for (var username in json) {
+            players[username] = new Player(json[username])
+        }
+        
+        return players
+    }
+
 
 
     // Methods
 
     isInGame(player: string): boolean
-    isInGame(player: RB.Player): boolean
+    isInGame(player: Player): boolean
     isInGame(player): boolean {
         let username = player
 
@@ -200,7 +211,7 @@ export class Game {
     }
 
     availableColors(player?: string): { [ key: string ]: string }
-    availableColors(player: RB.Player): { [ key: string ]: string }
+    availableColors(player: Player): { [ key: string ]: string }
     availableColors(player): { [ key: string ]: string } {
         let username = player
 

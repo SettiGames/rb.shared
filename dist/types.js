@@ -30,6 +30,21 @@ var RB;
         HubActionType["removePlayer"] = "removePlayer";
         HubActionType["soloProcessGame"] = "soloProcessGame";
     })(HubActionType = RB.HubActionType || (RB.HubActionType = {}));
+    var VesselFlag;
+    (function (VesselFlag) {
+        VesselFlag["motorMax1Up"] = "motorMax1Up";
+        VesselFlag["motorStart1Up"] = "motorStart1Up";
+        VesselFlag["finderMax1Up"] = "finderMax1Up";
+        VesselFlag["finderStart1Up"] = "finderStart1Up";
+        VesselFlag["netsMax1Up"] = "netsMax1Up";
+        VesselFlag["netsStart1Up"] = "netsStart1Up";
+        VesselFlag["wellMax1Up"] = "wellMax1Up";
+        VesselFlag["wellStart1Up"] = "wellStart1Up";
+        VesselFlag["cannonsMax1Up"] = "cannonsMax1Up";
+        VesselFlag["cannonsStart1Up"] = "cannonsStart1Up";
+        VesselFlag["defenseMax1Up"] = "defenseMax1Up";
+        VesselFlag["defenseStart1Up"] = "defenseStart1Up";
+    })(VesselFlag = RB.VesselFlag || (RB.VesselFlag = {}));
     var GameStatus;
     (function (GameStatus) {
         GameStatus["open"] = "open";

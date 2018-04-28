@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var moment = require("moment");
 var configs_1 = require("./../configs");
+var player_1 = require("./player");
 var types_1 = require("./../types");
 var Game = (function () {
     function Game(json) {
@@ -202,7 +203,7 @@ var Game = (function () {
         if (json.turnOrder)
             this.turnOrder = json.turnOrder;
         if (json.resigned)
-            this.resigned = json.resigned;
+            this.resigned = this.parsePlayers(json.resigned);
         if (json.location)
             this.location = json.location;
         if (json.fog !== undefined)
@@ -212,7 +213,7 @@ var Game = (function () {
         if (json.turn)
             this.turn = json.turn;
         if (json.players)
-            this.players = json.players;
+            this.players = this.parsePlayers(json.players);
         if (json.market)
             this.market = json.market;
         if (json.weather)
@@ -233,6 +234,13 @@ var Game = (function () {
             this.adjacents = json.adjacents;
         if (json.hubActions)
             this.hubActions = json.hubActions;
+    };
+    Game.prototype.parsePlayers = function (json) {
+        var players = {};
+        for (var username in json) {
+            players[username] = new player_1.Player(json[username]);
+        }
+        return players;
     };
     Game.prototype.isInGame = function (player) {
         var username = player;

@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.game = {
     initialFunds: 50,
-    upgradeMax: 5,
+    upgradeMax: 4,
     broadcastMaxLength: 280,
     bootableScore: 2,
     startTimerLength: 20,

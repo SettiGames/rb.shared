@@ -9,9 +9,9 @@ var Vessel = (function () {
         }
         this.parse(json);
     }
-    Object.defineProperty(Vessel.prototype, "color", {
+    Object.defineProperty(Vessel.prototype, "preferredColor", {
         get: function () {
-            return this.colors[0];
+            return this.colors[0] || null;
         },
         enumerable: true,
         configurable: true
@@ -23,9 +23,9 @@ var Vessel = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(Vessel.prototype, "effect", {
+    Object.defineProperty(Vessel.prototype, "flags", {
         get: function () {
-            return configs_1.config.vessels[this.type].effect;
+            return configs_1.config.vessels[this.type].flags;
         },
         enumerable: true,
         configurable: true
@@ -37,6 +37,12 @@ var Vessel = (function () {
         enumerable: true,
         configurable: true
     });
+    Vessel.prototype.hasFlag = function (flag) {
+        if (!this.flags) {
+            return false;
+        }
+        return this.flags.indexOf(flag) !== -1;
+    };
     Vessel.prototype.parse = function (json) {
         if (json.name)
             this.name = json.name;

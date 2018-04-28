@@ -2,6 +2,7 @@ import * as express from 'express'
 import * as mongoose from 'mongoose'
 import * as SocketIO from 'socket.io'
 import { User } from './models/user'
+import { Player } from './models/player'
 import { Game } from './models/game'
 import { Vessel } from './models/vessel'
 import { Radio } from './models/radio'
@@ -161,6 +162,21 @@ export namespace RB {
         rating?: number
     }
 
+    export enum VesselFlag {
+        motorMax1Up = 'motorMax1Up',
+        motorStart1Up = 'motorStart1Up',
+        finderMax1Up = 'finderMax1Up',
+        finderStart1Up = 'finderStart1Up',
+        netsMax1Up = 'netsMax1Up',
+        netsStart1Up = 'netsStart1Up',
+        wellMax1Up = 'wellMax1Up',
+        wellStart1Up = 'wellStart1Up',
+        cannonsMax1Up = 'cannonsMax1Up',
+        cannonsStart1Up = 'cannonsStart1Up',
+        defenseMax1Up = 'defenseMax1Up',
+        defenseStart1Up = 'defenseStart1Up'
+    }
+
 
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -228,29 +244,6 @@ export namespace RB {
     export interface Forecast {
         type: WeatherType
         chance: number
-    }
-
-
-
-    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    * Player
-    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-    export interface Player {
-        username: string
-        color: string
-        vessel: GameVessel
-        rating: number
-        funds?: number
-        location?: string
-        trophies?: boolean[]
-        explored?: string[]
-        fished?: string[]
-        isSunk?: RB.DamageType
-        damage?: Damage
-        upgrades?: Upgrades
-        well?: Setti.NumberMap<number>[]
-        skipScore?: number
-        emote: Emote
     }
 
 
