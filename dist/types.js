@@ -30,6 +30,12 @@ var RB;
         HubActionType["removePlayer"] = "removePlayer";
         HubActionType["soloProcessGame"] = "soloProcessGame";
     })(HubActionType = RB.HubActionType || (RB.HubActionType = {}));
+    var CommandType;
+    (function (CommandType) {
+        CommandType["joke"] = "joke";
+        CommandType["luck"] = "luck";
+        CommandType["ratings"] = "rating";
+    })(CommandType = RB.CommandType || (RB.CommandType = {}));
     var VesselFlag;
     (function (VesselFlag) {
         VesselFlag["motorMax1Up"] = "motorMax1Up";

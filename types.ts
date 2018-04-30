@@ -149,6 +149,21 @@ export namespace RB {
 
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Commands
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export enum CommandType {
+        joke = 'joke',
+        luck = 'luck',
+        ratings = 'rating',
+    }
+
+    export interface Command {
+        (game: Game, type: CommandType): { delay: number, broadcast: RB.Broadcast }[]
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     * Vessel
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export interface MongooseVessel extends Vessel, mongoose.Document {
