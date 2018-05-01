@@ -30,9 +30,9 @@ var Player = (function () {
             this.color = json.color;
         if (json.vessel)
             this.vessel = new vessel_1.Vessel(json.vessel);
-        if (json.rating)
+        if (json.rating !== undefined)
             this.rating = json.rating;
-        if (json.funds)
+        if (json.funds !== undefined)
             this.funds = json.funds;
         if (json.location)
             this.location = json.location;
@@ -50,7 +50,7 @@ var Player = (function () {
             this.upgrades = json.upgrades;
         if (json.well)
             this.well = json.well;
-        if (json.skipScore)
+        if (json.skipScore !== undefined)
             this.skipScore = json.skipScore;
         if (json.emote)
             this.emote = json.emote;

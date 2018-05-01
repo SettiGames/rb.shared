@@ -36,8 +36,8 @@ export class Player {
         if (json.username) this.username = json.username
         if (json.color) this.color = json.color
         if (json.vessel) this.vessel = new Vessel(json.vessel)
-        if (json.rating) this.rating = json.rating
-        if (json.funds) this.funds = json.funds
+        if (json.rating !== undefined) this.rating = json.rating
+        if (json.funds !== undefined) this.funds = json.funds
         if (json.location) this.location = json.location
         if (json.trophies) this.trophies = json.trophies
         if (json.explored) this.explored = json.explored
@@ -46,7 +46,7 @@ export class Player {
         if (json.damage) this.damage = json.damage
         if (json.upgrades) this.upgrades = json.upgrades
         if (json.well) this.well = json.well
-        if (json.skipScore) this.skipScore = json.skipScore
+        if (json.skipScore !== undefined) this.skipScore = json.skipScore
         if (json.emote) this.emote = json.emote
     }
 
