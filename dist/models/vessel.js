@@ -52,8 +52,6 @@ var Vessel = (function () {
             this.rating = json.rating;
         if (json.type)
             this.type = json.type;
-        if (json.location)
-            this.location = json.location;
         if (json.colors)
             this.colors = json.colors;
         if (json.username)

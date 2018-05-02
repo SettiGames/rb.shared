@@ -8,7 +8,6 @@ export class Vessel {
     name: string
     type: string
     rating?: number
-    location?: string
     colors?: string[]
     username?: string
     owner?: string | User
@@ -62,7 +61,6 @@ export class Vessel {
         if (json.slug) this.slug = json.slug
         if (json.rating !== undefined) this.rating = json.rating
         if (json.type) this.type = json.type
-        if (json.location) this.location = json.location
         if (json.colors) this.colors = json.colors
         if (json.username) this.username = json.username
         if (json.owner) this.parseOwner(json.owner)
