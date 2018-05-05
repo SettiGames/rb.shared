@@ -95,6 +95,13 @@ var Game = (function () {
             for (var username in this.players) {
                 names.push(this.players[username].vessel.name);
             }
+            if (this.stats && this.stats.players) {
+                for (var username in this.stats.players) {
+                    if (this.stats.players[username].vessels) {
+                        names = names.concat(this.stats.players[username].vessels);
+                    }
+                }
+            }
             return names;
         },
         enumerable: true,

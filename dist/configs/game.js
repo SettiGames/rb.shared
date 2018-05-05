@@ -7,6 +7,20 @@ exports.game = {
     bootableScore: 2,
     startTimerLength: 20,
     honeyHoleTargetDay: 5,
+    lengths: {
+        gameName: {
+            min: 1,
+            max: 40
+        },
+        vesselName: {
+            min: 1,
+            max: 24
+        },
+        userName: {
+            min: 3,
+            max: 24
+        }
+    },
     board: {
         width: 7,
         height: 8,

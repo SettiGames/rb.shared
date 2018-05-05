@@ -7,6 +7,21 @@ export const game = {
     startTimerLength: 20,           // Length of the start game timer in seconds
     honeyHoleTargetDay: 5,          // Ideal number of days between honey holes
 
+    lengths: {
+        gameName: {
+            min: 1,
+            max: 40
+        },
+        vesselName: {
+            min: 1,
+            max: 24
+        },
+        userName: {
+            min: 3,
+            max: 24
+        }
+    },
+
     board: {
         width: 7,
         height: 8,
