@@ -462,6 +462,7 @@ export namespace RB {
     export enum PlayerStatKey {
         vessels = 'vessels',
         distance = 'distance',
+        honeyHoleCasts = 'honeyHoleCasts',
         biggestCatch = 'biggestCatch',
         fishCaught = 'fishCaught',
         earnings = 'earnings',
@@ -485,6 +486,7 @@ export namespace RB {
     export interface PlayerStats {
         vessels?: string[]
         distance?: number
+        honeyHoleCasts?: number
         biggestCatch?: Catch
         fishCaught?: number
         earnings?: number

@@ -45,9 +45,15 @@ export class Player {
         if (json.isSunk) this.isSunk = json.isSunk
         if (json.damage) this.damage = json.damage
         if (json.upgrades) this.upgrades = json.upgrades
-        if (json.well) this.well = json.well
+        if (json.well) this.well = this.parseWell(json.well)
         if (json.skipScore !== undefined) this.skipScore = json.skipScore
         if (json.emote) this.emote = json.emote
+    }
+
+    private parseWell(json): Setti.NumberMap<number>[] {
+        return json.map((item) => {
+            return item === null ? {} : item
+        })
     }
 
 }
