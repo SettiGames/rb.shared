@@ -157,6 +157,7 @@ var RB;
     (function (PlayerStatKey) {
         PlayerStatKey["vessels"] = "vessels";
         PlayerStatKey["distance"] = "distance";
+        PlayerStatKey["honeyHoleCasts"] = "honeyHoleCasts";
         PlayerStatKey["biggestCatch"] = "biggestCatch";
         PlayerStatKey["fishCaught"] = "fishCaught";
         PlayerStatKey["earnings"] = "earnings";

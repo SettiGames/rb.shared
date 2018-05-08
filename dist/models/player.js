@@ -49,11 +49,16 @@ var Player = (function () {
         if (json.upgrades)
             this.upgrades = json.upgrades;
         if (json.well)
-            this.well = json.well;
+            this.well = this.parseWell(json.well);
         if (json.skipScore !== undefined)
             this.skipScore = json.skipScore;
         if (json.emote)
             this.emote = json.emote;
+    };
+    Player.prototype.parseWell = function (json) {
+        return json.map(function (item) {
+            return item === null ? {} : item;
+        });
     };
     return Player;
 }());
