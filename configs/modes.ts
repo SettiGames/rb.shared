@@ -12,10 +12,10 @@ export const modes = {
         attributes: [[ 4, 'Players' ], [ 3, 'Minutes' ]]
     },
 
-    // UNRANKED
+    // UNRANKED 
 
     'u-2p-5m': {
-        name: 'Casual Quick 2 Players',
+        name: 'Speedy 2 Players',
         type: 'unranked',
         isEnabled: true,
         isRanked: false,
@@ -26,7 +26,7 @@ export const modes = {
     },
 
     'u-2p-25h': {
-        name: 'Casual 2 Players',
+        name: 'Slow 2 Players',
         type: 'unranked',
         isEnabled: false,
         isRanked: false,
@@ -37,7 +37,7 @@ export const modes = {
     },
     
     'u-4p-5m': {
-        name: 'Casual Quick 4 Players',
+        name: 'Speedy 4 Players',
         type: 'unranked',
         isEnabled: true,
         isRanked: false,
@@ -48,7 +48,7 @@ export const modes = {
     },
 
     'u-4p-25h': {
-        name: 'Casual 4 Players',
+        name: 'Slow 4 Players',
         type: 'unranked',
         isEnabled: false,
         isRanked: false,
@@ -58,10 +58,10 @@ export const modes = {
         attributes: [[ 4, 'Players' ], [ 25, 'Hours' ]]
     },
 
-    'u-6p-5m': {
-        name: 'Casual Quick 6 Players',
+    /* 'u-6p-5m': {
+        name: 'Speedy 6 Players',
         type: 'unranked',
-        isEnabled: true,
+        isEnabled: false,
         isRanked: false,
         isSolo: false,
         turnLength: 'minutes',
@@ -70,7 +70,7 @@ export const modes = {
     },
 
     'u-6p-25h': {
-        name: 'Casual 6 Players',
+        name: 'Slow 6 Players',
         type: 'unranked',
         isEnabled: false,
         isRanked: false,
@@ -78,7 +78,7 @@ export const modes = {
         turnLength: 'day',
         numOfPlayers: 6,
         attributes: [[ 6, 'Players' ], [ 25, 'Hours' ]]
-    },
+    }, */
 
     // SOLO
 
