@@ -1,32 +1,25 @@
 export const shop = {
 
     doubloons: {
-        'd-100-100': {
+        'd-150-50': {
             active: true,
-            description: `Add 100Đ to your Raider Bay funds.`,
-            amount: 100,
+            description: `Add 50Đ to your Raider Bay Stash.`,
+            amount: 150,
+            doubloons: 50
+        },
+    
+        'd-300-100': {
+            active: true,
+            description: `Add 100Đ to your Raider Bay Stash.`,
+            amount: 300,
             doubloons: 100
         },
     
-        'd-300-300': {
+        'd-1500-600': {
             active: true,
-            description: `Add 300Đ to your Raider Bay funds.`,
-            amount: 300,
-            doubloons: 300
-        },
-    
-        'd-1000-1200': {
-            active: true,
-            description: `Add 1200Đ to your Raider Bay funds.`,
-            amount: 1000,
-            doubloons: 1200
-        },
-    
-        'd-2000-2400': {
-            active: true,
-            description: `Add 2400Đ to your Raider Bay funds.`,
-            amount: 2000,
-            doubloons: 2400
+            description: `Add 600Đ to your Raider Bay Stash.`,
+            amount: 1500,
+            doubloons: 600
         }
     }
 

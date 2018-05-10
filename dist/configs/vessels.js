@@ -4,7 +4,7 @@ var types_1 = require("./../types");
 exports.vessels = {
     attacker: {
         name: 'Attacker',
-        price: 300,
+        price: 100,
         description: '+1 Starting and Max Cannons',
         flags: [types_1.RB.VesselFlag.cannonsMax1Up, types_1.RB.VesselFlag.cannonsStart1Up],
         flagDescriptions: [
@@ -63,7 +63,7 @@ exports.vessels = {
     },
     defender: {
         name: 'Defender',
-        price: 300,
+        price: 100,
         flags: [types_1.RB.VesselFlag.defenseMax1Up, types_1.RB.VesselFlag.defenseStart1Up],
         flagDescriptions: [
             '+1 Starting Defense',
@@ -89,7 +89,7 @@ exports.vessels = {
     },
     finder: {
         name: 'Finder',
-        price: 300,
+        price: 100,
         flags: [types_1.RB.VesselFlag.finderMax1Up, types_1.RB.VesselFlag.finderStart1Up],
         flagDescriptions: [
             '+1 Starting Fish Finder',
@@ -119,7 +119,7 @@ exports.vessels = {
     },
     netter: {
         name: 'Netter',
-        price: 300,
+        price: 100,
         flags: [types_1.RB.VesselFlag.netsMax1Up, types_1.RB.VesselFlag.netsStart1Up],
         flagDescriptions: [
             '+1 Starting Nets',
@@ -145,7 +145,7 @@ exports.vessels = {
     },
     speeder: {
         name: 'Speeder',
-        price: 300,
+        price: 100,
         flags: [types_1.RB.VesselFlag.motorMax1Up, types_1.RB.VesselFlag.motorStart1Up],
         flagDescriptions: [
             '+1 Starting Motor',
@@ -171,7 +171,7 @@ exports.vessels = {
     },
     weller: {
         name: 'Weller',
-        price: 300,
+        price: 100,
         flags: [types_1.RB.VesselFlag.wellMax1Up, types_1.RB.VesselFlag.wellStart1Up],
         flagDescriptions: [
             '+1 Starting Live Well',

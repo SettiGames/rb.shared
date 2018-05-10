@@ -4,7 +4,7 @@ export const vessels = {
 
     attacker: {
         name: 'Attacker',
-        price: 300,
+        price: 100,
         description: '+1 Starting and Max Cannons',
         flags: [ RB.VesselFlag.cannonsMax1Up, RB.VesselFlag.cannonsStart1Up ],
         flagDescriptions: [
@@ -65,7 +65,7 @@ export const vessels = {
 
     defender: {
         name: 'Defender',
-        price: 300,
+        price: 100,
         flags: [ RB.VesselFlag.defenseMax1Up, RB.VesselFlag.defenseStart1Up ],
         flagDescriptions: [
             '+1 Starting Defense',
@@ -92,7 +92,7 @@ export const vessels = {
 
     finder: {
         name: 'Finder',
-        price: 300,
+        price: 100,
         flags: [ RB.VesselFlag.finderMax1Up, RB.VesselFlag.finderStart1Up ],
         flagDescriptions: [
             '+1 Starting Fish Finder',
@@ -123,7 +123,7 @@ export const vessels = {
 
     netter: {
         name: 'Netter',
-        price: 300,
+        price: 100,
         flags: [ RB.VesselFlag.netsMax1Up, RB.VesselFlag.netsStart1Up ],
         flagDescriptions: [
             '+1 Starting Nets',
@@ -150,7 +150,7 @@ export const vessels = {
 
     speeder: {
         name: 'Speeder',
-        price: 300,
+        price: 100,
         flags: [ RB.VesselFlag.motorMax1Up, RB.VesselFlag.motorStart1Up ],
         flagDescriptions: [
             '+1 Starting Motor',
@@ -177,7 +177,7 @@ export const vessels = {
 
     weller: {
         name: 'Weller',
-        price: 300,
+        price: 100,
         flags: [ RB.VesselFlag.wellMax1Up, RB.VesselFlag.wellStart1Up ],
         flagDescriptions: [
             '+1 Starting Live Well',

@@ -4,6 +4,7 @@ import { RB } from './../types'
 export class User {
 
     username?: string
+    slug?: string
     currency?: number
     rating?: number
     email?: string
