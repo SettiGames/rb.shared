@@ -12,7 +12,7 @@ exports.modes = {
         attributes: [[4, 'Players'], [3, 'Minutes']]
     },
     'u-2p-5m': {
-        name: 'Casual Quick 2 Players',
+        name: 'Speedy 2 Players',
         type: 'unranked',
         isEnabled: true,
         isRanked: false,
@@ -22,7 +22,7 @@ exports.modes = {
         attributes: [[2, 'Players'], [3, 'Minutes']]
     },
     'u-2p-25h': {
-        name: 'Casual 2 Players',
+        name: 'Slow 2 Players',
         type: 'unranked',
         isEnabled: false,
         isRanked: false,
@@ -32,7 +32,7 @@ exports.modes = {
         attributes: [[2, 'Players'], [25, 'Hours']]
     },
     'u-4p-5m': {
-        name: 'Casual Quick 4 Players',
+        name: 'Speedy 4 Players',
         type: 'unranked',
         isEnabled: true,
         isRanked: false,
@@ -42,7 +42,7 @@ exports.modes = {
         attributes: [[4, 'Players'], [3, 'Minutes']]
     },
     'u-4p-25h': {
-        name: 'Casual 4 Players',
+        name: 'Slow 4 Players',
         type: 'unranked',
         isEnabled: false,
         isRanked: false,
@@ -50,26 +50,6 @@ exports.modes = {
         turnLength: 'day',
         numOfPlayers: 4,
         attributes: [[4, 'Players'], [25, 'Hours']]
-    },
-    'u-6p-5m': {
-        name: 'Casual Quick 6 Players',
-        type: 'unranked',
-        isEnabled: true,
-        isRanked: false,
-        isSolo: false,
-        turnLength: 'minutes',
-        numOfPlayers: 6,
-        attributes: [[6, 'Players'], [3, 'Minutes']]
-    },
-    'u-6p-25h': {
-        name: 'Casual 6 Players',
-        type: 'unranked',
-        isEnabled: false,
-        isRanked: false,
-        isSolo: false,
-        turnLength: 'day',
-        numOfPlayers: 6,
-        attributes: [[6, 'Players'], [25, 'Hours']]
     },
     's-14d': {
         name: 'A Fortnight At Sea',
