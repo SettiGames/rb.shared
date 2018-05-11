@@ -32,8 +32,10 @@ var RB;
     })(HubActionType = RB.HubActionType || (RB.HubActionType = {}));
     var CommandType;
     (function (CommandType) {
+        CommandType["fact"] = "fact";
         CommandType["joke"] = "joke";
         CommandType["luck"] = "luck";
+        CommandType["time"] = "time";
         CommandType["ratings"] = "rating";
     })(CommandType = RB.CommandType || (RB.CommandType = {}));
     var VesselFlag;

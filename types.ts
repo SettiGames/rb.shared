@@ -152,8 +152,10 @@ export namespace RB {
     * Commands
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum CommandType {
+        fact = 'fact',
         joke = 'joke',
         luck = 'luck',
+        time = 'time',
         ratings = 'rating',
     }
 
