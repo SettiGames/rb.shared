@@ -231,6 +231,8 @@ var Game = (function () {
             this.honeyHole = json.honeyHole;
         if (json.stats)
             this.stats = json.stats;
+        if (json.rankings)
+            this.rankings = json.rankings;
         if (json.warning !== undefined)
             this.warning = json.warning;
         if (json.newsBroadcasts)

@@ -48,8 +48,6 @@ var Vessel = (function () {
             this.name = json.name;
         if (json.slug)
             this.slug = json.slug;
-        if (json.rating !== undefined)
-            this.rating = json.rating;
         if (json.type)
             this.type = json.type;
         if (json.colors)
@@ -58,6 +56,10 @@ var Vessel = (function () {
             this.username = json.username;
         if (json.owner)
             this.parseOwner(json.owner);
+        if (json.stats)
+            this.stats = json.stats;
+        if (json.rankings)
+            this.rankings = json.rankings;
     };
     Vessel.prototype.parseOwner = function (input) {
         if (typeof input === "string") {

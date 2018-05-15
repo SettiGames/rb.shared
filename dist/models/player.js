@@ -4,6 +4,7 @@ var vessel_1 = require("./vessel");
 var Player = (function () {
     function Player(json) {
         this.username = null;
+        this.slug = null;
         this.color = null;
         this.vessel = null;
         this.rating = null;
@@ -26,6 +27,8 @@ var Player = (function () {
     Player.prototype.parse = function (json) {
         if (json.username)
             this.username = json.username;
+        if (json.slug)
+            this.slug = json.slug;
         if (json.color)
             this.color = json.color;
         if (json.vessel)
