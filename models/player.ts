@@ -5,6 +5,7 @@ import { RB, Setti } from './../types'
 export class Player {
 
     username: string = null
+    slug: string = null
     color: string = null
     vessel: Vessel = null
     rating: number = null
@@ -34,6 +35,7 @@ export class Player {
 
     parse(json: any) {
         if (json.username) this.username = json.username
+        if (json.slug) this.slug = json.slug
         if (json.color) this.color = json.color
         if (json.vessel) this.vessel = new Vessel(json.vessel)
         if (json.rating !== undefined) this.rating = json.rating

@@ -7,10 +7,11 @@ export class Vessel {
     slug?: string
     name: string
     type: string
-    rating?: number
     colors?: string[]
     username?: string
     owner?: string | User
+    stats?: RB.VesselStats
+    rankings?: RB.VesselRankings
 
     constructor(json?: any) {
         if (!json) {
@@ -59,11 +60,12 @@ export class Vessel {
     parse(json: any) {
         if (json.name) this.name = json.name
         if (json.slug) this.slug = json.slug
-        if (json.rating !== undefined) this.rating = json.rating
         if (json.type) this.type = json.type
         if (json.colors) this.colors = json.colors
         if (json.username) this.username = json.username
         if (json.owner) this.parseOwner(json.owner)
+        if (json.stats) this.stats = json.stats
+        if (json.rankings) this.rankings = json.rankings
     }
 
     private parseOwner(input: any) {

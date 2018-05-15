@@ -6,16 +6,15 @@ export class User {
     username?: string
     slug?: string
     currency?: number
-    rating?: number
     email?: string
     isAdmin?: boolean
     firebaseId?: string
     firebaseToken?: string
     games?: string[]
-    wins?: string[]
-    loses?: string[]
     resigned?: string[]
     vessels?: Vessel[]
+    stats?: RB.PlayerStats
+    rankings?: RB.PlayerRankings
 
     yourTurn?: {
         slug: string,
@@ -37,16 +36,15 @@ export class User {
     parse(json: any) {
         if (json.username) this.username = json.username
         if (json.currency !== undefined) this.currency = json.currency
-        if (json.rating) this.rating = json.rating
         if (json.email) this.email = json.email
         if (json.isAdmin !== undefined) this.isAdmin = json.isAdmin
         if (json.firebaseId) this.firebaseId = json.firebaseId
         if (json.firebaseToken) this.firebaseToken = json.firebaseToken
         if (json.games) this.games = json.games
-        if (json.wins) this.wins = json.wins
-        if (json.loses) this.loses = json.loses
         if (json.resigned) this.resigned = json.resigned
         if (json.vessels) this.vessels = this.parseVessels(json.vessels)
+        if (json.stats) this.stats = json.stats
+        if (json.rankings) this.rankings = json.rankings
         
         if (json.yourTurn) this.yourTurn = json.yourTurn
     }
@@ -67,6 +65,46 @@ export class User {
 
     get isRanked(): boolean {        
         return this.vessels && this.vessels.length > 0
+    }
+
+    get rank(): string {
+        if (!this.isRanked) {
+            return 'Ordinary Seaman'
+        }
+
+        if (this.stats.rating >= 2000) {
+            return 'Fishing Admiral'
+        }
+
+        if (this.stats.rating >= 1800) {
+            return 'Captain'
+        }
+
+        if (this.stats.rating >= 1600) {
+            return 'Chief Mate'
+        }
+
+        if (this.stats.rating >= 1500) {
+            return 'Second Mate'
+        }
+
+        if (this.stats.rating >= 1400) {
+            return 'Third Mate'
+        }
+
+        if (this.stats.rating >= 1200) {
+            return 'Boatswain'
+        }
+
+        if (this.stats.rating >= 1100) {
+            return 'Coxswain'
+        }
+
+        if (this.stats.rating >= 1000) {
+            return 'Able Seaman'
+        }
+
+        return 'Yeoman'
     }
 
 }

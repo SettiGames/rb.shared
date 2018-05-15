@@ -441,9 +441,10 @@ export namespace RB {
 
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    * Stats
+    * Game Stats
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum GameStatKey {
+        score = 'score',
         rounds = 'rounds',
         fog = 'fog',
         storm = 'storm',
@@ -453,6 +454,7 @@ export namespace RB {
     }
 
     export interface GameStats {
+        score?: number
         rounds?: number
         fog?: number
         storm?: number
@@ -461,7 +463,27 @@ export namespace RB {
         market?: number[][]
     }
 
+    export enum GameRankingKey {
+        score = 'rankings:games:a-fortnight-at-sea'
+    }
+
+    export interface GameRankings {
+        score?: number
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Player Stats
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum PlayerStatKey {
+        rating = 'rating',
+        ratingsDelta = 'ratingsDelta',
+        games = 'games',
+        wins = 'wins',
+        loses = 'loses',
+        trophies = 'trophies',
+        fivers = 'fivers',
         vessels = 'vessels',
         distance = 'distance',
         honeyHoleCasts = 'honeyHoleCasts',
@@ -469,23 +491,31 @@ export namespace RB {
         fishCaught = 'fishCaught',
         earnings = 'earnings',
         treasure = 'treasure',
+        treasureCount = 'treasureCount',
         doubloons = 'doubloons',
         luck = 'luck',
         attackSuccess = 'attackSuccess',
         attackFail = 'attackFail',
-        attackRolls = 'attackRolls',
+        attacks = 'attacks',
         biggestAttack = 'biggestAttack',
         fishStolen = 'fishStolen',
+        moneyStolen = 'moneyStolen',
         bribe = 'bribe',
         defenseSuccess = 'defenseSuccess',
         defenseFail = 'defenseFail',
-        defenseRolls = 'defenseRolls',
+        defends = 'defends',
         collisions = 'collisions',
-        turnLengths = 'turnLengths',
-        ratingsDelta = 'ratingsDelta'
+        turnLengths = 'turnLengths'
     }
 
     export interface PlayerStats {
+        rating?: number
+        ratingsDelta?: number
+        games?: number
+        wins?: number
+        loses?: number
+        fivers?: number
+        trophies?: number
         vessels?: string[]
         distance?: number
         honeyHoleCasts?: number
@@ -493,65 +523,147 @@ export namespace RB {
         fishCaught?: number
         earnings?: number
         treasure?: number
+        treasureCount?: number
         doubloons?: number
         luck?: number
         luckRolls?: number
         attackSuccess?: number
         attackFail?: number
-        attackRolls?: number[]
+        attacks?: number
         biggestAttack?: Setti.StringMap<string | number>
         fishStolen?: number
+        moneyStolen?: number
         bribe?: number
         defenseSuccess?: number
         defenseFail?: number
-        defenseRolls?: number[]
+        defends?: number
         collisions?: number
         turnLengths?: number[]
-        ratingsDelta?: number
     }
 
+    export enum PlayerRankingKey {
+        rating = 'rankings:players:rating',
+        games = 'rankings:players:games',
+        wins = 'rankings:players:wins',
+        loses = 'rankings:players:loses',
+        fivers = 'rankings:players:fivers',
+        trophies = 'rankings:players:trophies',
+        distance = 'rankings:players:distance',
+        fishCaught = 'rankings:players:fishCaught',
+        earnings = 'rankings:players:earnings',
+        treasure = 'rankings:players:treasure',
+        doubloons = 'rankings:players:doubloons',
+        attackSuccess = 'rankings:players:attackSuccess',
+        attacks = 'rankings:players:attacks',
+        fishStolen = 'rankings:players:fishStolen',
+        moneyStolen = 'rankings:players:moneyStolen',
+        defenseSuccess = 'rankings:players:defenseSuccess',
+        defends = 'rankings:players:defends',
+        collisions = 'rankings:players:collisions'
+    }
+
+    export interface PlayerRankings {
+        rating?: number
+        games?: number
+        wins?: number
+        loses?: number
+        fivers?: number
+        trophies?: number
+        distance?: number
+        fishCaught?: number
+        earnings?: number
+        treasure?: number
+        doubloons?: number
+        attackSuccess?: number
+        attacks?: number
+        fishStolen?: number
+        moneyStolen?: number
+        defenseSuccess?: number
+        defends?: number
+        collisions?: number
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Vessel Stats
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum VesselStatKey {
+        experience ='experience',
+        trophies = 'trophies',
         distance = 'distance',
         biggestCatch = 'biggestCatch',
         fishCaught = 'fishCaught',
         earnings = 'earnings',
         treasure = 'treasure',
+        doubloons = 'doubloons',
+        treasureCount = 'treasureCount',
         attackSuccess = 'attackSuccess',
         attackFail = 'attackFail',
-        attackRolls = 'attackRolls',
+        attacks = 'attacks',
         biggestAttack = 'biggestAttack',
         fishStolen = 'fishStolen',
         moneyStolen = 'moneyStolen',
         defenseSuccess = 'defenseSuccess',
         defenseFail = 'defenseFail',
-        defenseRolls = 'defenseRolls',
-        collisions = 'collisions',
+        defends = 'defends',
+        collisions = 'collisions'
     }
 
     export interface VesselStats {
+        experience?: number
+        trophies?: number
         distance?: number
         biggestCatch?: Catch
         fishCaught?: number
         earnings?: number
         treasure?: number
+        doubloons?: number
+        treasureCount?: number
         attackSuccess?: number
         attackFail?: number
-        attackRolls?: number[]
+        attacks?: number
         biggestAttack?: Setti.StringMap<string | number>
         fishStolen?: number
         moneyStolen?: number
         defenseSuccess?: number
         defenseFail?: number
-        defenseRolls?: number[]
+        defends?: number
         collisions?: number
     }
 
-    export enum SortedStatKey {
-        rank = 'rank'
+    export enum VesselRankingKey {
+        experience = 'rankings:vessels:experience',
+        trophies = 'rankings:vessels:trophies',
+        distance = 'rankings:vessels:distance',
+        fishCaught = 'rankings:vessels:fishCaught',
+        earnings = 'rankings:vessels:earnings',
+        treasure = 'rankings:vessels:treasure',
+        doubloons = 'rankings:vessels:doubloons',
+        attackSuccess = 'rankings:vessels:attackSuccess',
+        attacks = 'rankings:vessels:attacks',
+        fishStolen = 'rankings:vessels:fishStolen',
+        moneyStolen = 'rankings:vessels:moneyStolen',
+        defenseSuccess = 'rankings:vessels:defenseSuccess',
+        defends = 'rankings:vessels:defends',
+        collisions = 'rankings:vessels:collisions'
     }
 
-    export interface SortedStats {
-        rank?: number
+    export interface VesselRankings {
+        experience?: number
+        trophies?: number
+        distance?: number
+        fishCaught?: number
+        earnings?: number
+        treasure?: number
+        doubloons?: number
+        attackSuccess?: number
+        attacks?: number
+        fishStolen?: number
+        moneyStolen?: number
+        defenseSuccess?: number
+        defends?: number
+        collisions?: number
     }
 
 
@@ -579,7 +691,6 @@ export namespace RB {
         fishFail = 'fishFail',
         fishSuccess = 'fishSuccess',
         hurricane = 'hurricane',
-        lose = 'lose',
         move = 'move',
         newPlayer = 'newPlayer',
         newTurn = 'newTurn',
@@ -593,7 +704,6 @@ export namespace RB {
         tsunami = 'tsunami',
         turnIn = 'turnIn',
         upgrade = 'upgrade',
-        win = 'win'
     }
 
     export interface CommItem {

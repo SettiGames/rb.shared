@@ -36,9 +36,9 @@ export class Game {
     stats: {
         game?: RB.GameStats,
         players?: Setti.StringMap<RB.PlayerStats>,
-        vessels?: Setti.StringMap<RB.VesselStats>,
-        sorted?: RB.SortedStats
+        vessels?: Setti.StringMap<RB.VesselStats>
     } = null
+    rankings: RB.GameRankings
 
     warning: RB.Warning = null
     newsBroadcasts: RB.Broadcast[] = null
@@ -184,6 +184,7 @@ export class Game {
         if (json.board) this.board = json.board
         if (json.honeyHole !== undefined) this.honeyHole = json.honeyHole
         if (json.stats) this.stats = json.stats
+        if (json.rankings) this.rankings = json.rankings
 
         if (json.warning !== undefined) this.warning = json.warning
         if (json.newsBroadcasts) this.newsBroadcasts = json.newsBroadcasts
