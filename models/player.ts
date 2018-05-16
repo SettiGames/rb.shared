@@ -19,7 +19,7 @@ export class Player {
     upgrades?: RB.Upgrades = null
     well?: Setti.NumberMap<number>[] = null
     skipScore?: number = null
-    emote: RB.Emote = null
+    emote?: RB.Emote = null
 
     constructor(json?: any) {
         if (!json) {

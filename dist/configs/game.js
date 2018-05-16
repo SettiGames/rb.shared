@@ -5,7 +5,7 @@ exports.game = {
     upgradeMax: 4,
     broadcastMaxLength: 280,
     bootableScore: 2,
-    startTimerLength: 20,
+    startTimerLength: 15,
     honeyHoleTargetDay: 5,
     lengths: {
         gameName: {

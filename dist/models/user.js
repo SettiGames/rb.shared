@@ -23,8 +23,6 @@ var User = (function () {
             this.firebaseToken = json.firebaseToken;
         if (json.games)
             this.games = json.games;
-        if (json.resigned)
-            this.resigned = json.resigned;
         if (json.vessels)
             this.vessels = this.parseVessels(json.vessels);
         if (json.stats)

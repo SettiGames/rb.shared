@@ -11,7 +11,6 @@ export class User {
     firebaseId?: string
     firebaseToken?: string
     games?: string[]
-    resigned?: string[]
     vessels?: Vessel[]
     stats?: RB.PlayerStats
     rankings?: RB.PlayerRankings
@@ -41,7 +40,6 @@ export class User {
         if (json.firebaseId) this.firebaseId = json.firebaseId
         if (json.firebaseToken) this.firebaseToken = json.firebaseToken
         if (json.games) this.games = json.games
-        if (json.resigned) this.resigned = json.resigned
         if (json.vessels) this.vessels = this.parseVessels(json.vessels)
         if (json.stats) this.stats = json.stats
         if (json.rankings) this.rankings = json.rankings

@@ -120,7 +120,6 @@ export namespace RB {
         doubloons = 'doubloons',
         newTurn = 'newTurn',
         processGame = 'processGame',
-        removePlayer = 'removePlayer',
         soloProcessGame = 'soloProcessGame'
     }
 
