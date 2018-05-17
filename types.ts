@@ -540,28 +540,28 @@ export namespace RB {
         turnLengths?: number[]
     }
 
-    export enum PlayerRankingKey {
-        rating = 'rankings:players:rating',
-        games = 'rankings:players:games',
-        wins = 'rankings:players:wins',
-        loses = 'rankings:players:loses',
-        fivers = 'rankings:players:fivers',
-        trophies = 'rankings:players:trophies',
-        distance = 'rankings:players:distance',
-        fishCaught = 'rankings:players:fishCaught',
-        earnings = 'rankings:players:earnings',
-        treasure = 'rankings:players:treasure',
-        doubloons = 'rankings:players:doubloons',
-        attackSuccess = 'rankings:players:attackSuccess',
-        attacks = 'rankings:players:attacks',
-        fishStolen = 'rankings:players:fishStolen',
-        moneyStolen = 'rankings:players:moneyStolen',
-        defenseSuccess = 'rankings:players:defenseSuccess',
-        defends = 'rankings:players:defends',
-        collisions = 'rankings:players:collisions'
+    export enum UserRankingKey {
+        rating = 'rankings:users:rating',
+        games = 'rankings:users:games',
+        wins = 'rankings:users:wins',
+        loses = 'rankings:users:loses',
+        fivers = 'rankings:users:fivers',
+        trophies = 'rankings:users:trophies',
+        distance = 'rankings:users:distance',
+        fishCaught = 'rankings:users:fishCaught',
+        earnings = 'rankings:users:earnings',
+        treasure = 'rankings:users:treasure',
+        doubloons = 'rankings:users:doubloons',
+        attackSuccess = 'rankings:users:attackSuccess',
+        attacks = 'rankings:users:attacks',
+        fishStolen = 'rankings:users:fishStolen',
+        moneyStolen = 'rankings:users:moneyStolen',
+        defenseSuccess = 'rankings:users:defenseSuccess',
+        defends = 'rankings:users:defends',
+        collisions = 'rankings:users:collisions'
     }
 
-    export interface PlayerRankings {
+    export interface UserRankings {
         rating?: number
         games?: number
         wins?: number
