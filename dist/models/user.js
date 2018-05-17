@@ -49,33 +49,24 @@ var User = (function () {
     });
     Object.defineProperty(User.prototype, "rank", {
         get: function () {
-            if (!this.isRanked) {
+            if (!this.isRanked)
                 return 'Ordinary Seaman';
-            }
-            if (this.stats.rating >= 2000) {
+            if (this.stats.rating >= 2000)
                 return 'Fishing Admiral';
-            }
-            if (this.stats.rating >= 1800) {
+            if (this.stats.rating >= 1800)
                 return 'Captain';
-            }
-            if (this.stats.rating >= 1600) {
+            if (this.stats.rating >= 1600)
                 return 'Chief Mate';
-            }
-            if (this.stats.rating >= 1500) {
+            if (this.stats.rating >= 1500)
                 return 'Second Mate';
-            }
-            if (this.stats.rating >= 1400) {
+            if (this.stats.rating >= 1400)
                 return 'Third Mate';
-            }
-            if (this.stats.rating >= 1200) {
+            if (this.stats.rating >= 1200)
                 return 'Boatswain';
-            }
-            if (this.stats.rating >= 1100) {
+            if (this.stats.rating >= 1100)
                 return 'Coxswain';
-            }
-            if (this.stats.rating >= 1000) {
+            if (this.stats.rating >= 1000)
                 return 'Able Seaman';
-            }
             return 'Yeoman';
         },
         enumerable: true,
