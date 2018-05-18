@@ -11,6 +11,8 @@ var User = (function () {
     User.prototype.parse = function (json) {
         if (json.username)
             this.username = json.username;
+        if (json.slug)
+            this.slug = json.slug;
         if (json.currency !== undefined)
             this.currency = json.currency;
         if (json.email)

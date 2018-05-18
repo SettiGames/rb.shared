@@ -34,6 +34,7 @@ export class User {
 
     parse(json: any) {
         if (json.username) this.username = json.username
+        if (json.slug) this.slug = json.slug
         if (json.currency !== undefined) this.currency = json.currency
         if (json.email) this.email = json.email
         if (json.isAdmin !== undefined) this.isAdmin = json.isAdmin
