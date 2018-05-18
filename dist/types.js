@@ -26,6 +26,7 @@ var RB;
     (function (HubActionType) {
         HubActionType["doubloons"] = "doubloons";
         HubActionType["newTurn"] = "newTurn";
+        HubActionType["removePlayer"] = "removePlayer";
         HubActionType["processGame"] = "processGame";
         HubActionType["soloProcessGame"] = "soloProcessGame";
     })(HubActionType = RB.HubActionType || (RB.HubActionType = {}));

@@ -119,6 +119,7 @@ export namespace RB {
     export enum HubActionType {
         doubloons = 'doubloons',
         newTurn = 'newTurn',
+        removePlayer = 'removePlayer',
         processGame = 'processGame',
         soloProcessGame = 'soloProcessGame'
     }
