@@ -67,15 +67,15 @@ export class User {
 
     get rank(): string {
         if (!this.isRanked) return 'Ordinary Seaman'
-        if (this.stats.rating >= 2000) return 'Fishing Admiral' // Five Stripes Diamond White
-        if (this.stats.rating >= 1800) return 'Captain'         // Four Stripes Diamond White
-        if (this.stats.rating >= 1600) return 'Chief Mate'      // Four Stripes White
-        if (this.stats.rating >= 1500) return 'Second Mate'     // Three Stripes White
-        if (this.stats.rating >= 1400) return 'Third Mate'      // Two Stripe White
-        if (this.stats.rating >= 1200) return 'Boatswain'       // Two Stripe Blue
-        if (this.stats.rating >= 1100) return 'Coxswain'        // One Stripe Blue    
-        if (this.stats.rating >= 1000) return 'Able Seaman'     // None
-        return 'Yeoman'                                         // None
+        if (this.stats.rating >= 2000) return 'Fishing Admiral'
+        if (this.stats.rating >= 1800) return 'Captain'
+        if (this.stats.rating >= 1600) return 'Chief Mate'
+        if (this.stats.rating >= 1500) return 'Second Mate'
+        if (this.stats.rating >= 1400) return 'Third Mate'
+        if (this.stats.rating >= 1200) return 'Boatswain'
+        if (this.stats.rating >= 1100) return 'Coxswain' 
+        if (this.stats.rating >= 1000) return 'Able Seaman'
+        return 'Yeoman'
     }
 
 }
