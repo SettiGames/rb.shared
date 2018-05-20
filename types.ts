@@ -21,8 +21,8 @@ export namespace Setti {
     }
 
     export interface ConnectionData {
-        slug: string
-        username: string
+        userSlug: string
+        gameSlug?: string
         client: string
     }
     
@@ -53,9 +53,7 @@ export namespace Setti {
         user?: MongooseUser
     }
 
-    export interface Response extends express.Response {
-
-    }
+    export interface Response extends express.Response { }
 
 
 
@@ -63,8 +61,8 @@ export namespace Setti {
     * Socket.IO Extentions
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export interface Socket extends SocketIO.Socket {
-        slug: string
-        username: string
+        userSlug: string
+        gameSlug?: string
     }
 
     export type Acknowledgment = (...args: any[]) => void
@@ -108,7 +106,7 @@ export namespace RB {
     }
 
     export interface Action {
-        (game: Game, username: string, input: any): void
+        (game: Game, userSlug: string, input: any): void
     }
 
 
@@ -156,7 +154,7 @@ export namespace RB {
         joke = 'joke',
         luck = 'luck',
         time = 'time',
-        ratings = 'rating',
+        ratings = 'rating'
     }
 
     export interface Command {
@@ -170,13 +168,6 @@ export namespace RB {
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export interface MongooseVessel extends Vessel, mongoose.Document {
         class: Vessel
-    }
-    
-    export interface GameVessel {
-        slug?: string
-        name: string
-        type: string
-        rating?: number
     }
 
     export enum VesselFlag {
@@ -227,7 +218,7 @@ export namespace RB {
     * Turn
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export interface Turn {
-        username: string
+        userSlug: string
         casts: number
         finds: number
         moves: number

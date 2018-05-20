@@ -91,14 +91,14 @@ export class Game {
     get vesselNames(): string[] {
         let names: string[] = []
 
-        for (var username in this.players) {
-            names.push(this.players[username].vessel.name)
+        for (var slug in this.players) {
+            names.push(this.players[slug].vessel.name)
         }
 
         if (this.stats && this.stats.players) {
-            for (var username in this.stats.players) {
-                if (this.stats.players[username].vessels) {
-                    names = names.concat(this.stats.players[username].vessels)
+            for (var slug in this.stats.players) {
+                if (this.stats.players[slug].vessels) {
+                    names = names.concat(this.stats.players[slug].vessels)
                 }
             }
         }
@@ -112,7 +112,7 @@ export class Game {
     }
 
     get isBootable(): boolean {
-        const bootscoreIsHigh = this.players[this.turn.username].skipScore >= config.game.bootableScore
+        const bootscoreIsHigh = this.players[this.turn.userSlug].skipScore >= config.game.bootableScore
         return this.isSkippable && (bootscoreIsHigh || this.isFirstTurn)
     }
 
@@ -196,8 +196,8 @@ export class Game {
     private parsePlayers(json): Setti.StringMap<Player> {
         let players: Setti.StringMap<Player> = {}
 
-        for (var username in json) {
-            players[username] = new Player(json[username])
+        for (var slug in json) {
+            players[slug] = new Player(json[slug])
         }
         
         return players
@@ -210,34 +210,34 @@ export class Game {
     isInGame(player: string): boolean
     isInGame(player: Player): boolean
     isInGame(player): boolean {
-        let username = player
+        let slug = player
 
         if (typeof player === "object") {
-            username = player.username
+            slug = player.slug
         }
         
-        return this.players[username] !== undefined
+        return this.players[slug] !== undefined
     }
 
     availableColors(player?: string): { [ key: string ]: string }
     availableColors(player: Player): { [ key: string ]: string }
     availableColors(player): { [ key: string ]: string } {
-        let username = player
+        let slug = player
 
         if (typeof player === "object") {
-            username = player.username
+            slug = player.slug
         }
         
         let taken: string[] = []
         let available: { [ key: string ]: string } = {}
 
 
-        for (let u in this.players) {
-            if (u === username) {
+        for (let s in this.players) {
+            if (s === slug) {
                 continue
             }
 
-            taken.push(this.players[u].color)
+            taken.push(this.players[s].color)
         }
 
         for (let hex in config.game.colors) {

@@ -92,13 +92,13 @@ var Game = (function () {
     Object.defineProperty(Game.prototype, "vesselNames", {
         get: function () {
             var names = [];
-            for (var username in this.players) {
-                names.push(this.players[username].vessel.name);
+            for (var slug in this.players) {
+                names.push(this.players[slug].vessel.name);
             }
             if (this.stats && this.stats.players) {
-                for (var username in this.stats.players) {
-                    if (this.stats.players[username].vessels) {
-                        names = names.concat(this.stats.players[username].vessels);
+                for (var slug in this.stats.players) {
+                    if (this.stats.players[slug].vessels) {
+                        names = names.concat(this.stats.players[slug].vessels);
                     }
                 }
             }
@@ -117,7 +117,7 @@ var Game = (function () {
     });
     Object.defineProperty(Game.prototype, "isBootable", {
         get: function () {
-            var bootscoreIsHigh = this.players[this.turn.username].skipScore >= configs_1.config.game.bootableScore;
+            var bootscoreIsHigh = this.players[this.turn.userSlug].skipScore >= configs_1.config.game.bootableScore;
             return this.isSkippable && (bootscoreIsHigh || this.isFirstTurn);
         },
         enumerable: true,
@@ -246,30 +246,30 @@ var Game = (function () {
     };
     Game.prototype.parsePlayers = function (json) {
         var players = {};
-        for (var username in json) {
-            players[username] = new player_1.Player(json[username]);
+        for (var slug in json) {
+            players[slug] = new player_1.Player(json[slug]);
         }
         return players;
     };
     Game.prototype.isInGame = function (player) {
-        var username = player;
+        var slug = player;
         if (typeof player === "object") {
-            username = player.username;
+            slug = player.slug;
         }
-        return this.players[username] !== undefined;
+        return this.players[slug] !== undefined;
     };
     Game.prototype.availableColors = function (player) {
-        var username = player;
+        var slug = player;
         if (typeof player === "object") {
-            username = player.username;
+            slug = player.slug;
         }
         var taken = [];
         var available = {};
-        for (var u in this.players) {
-            if (u === username) {
+        for (var s in this.players) {
+            if (s === slug) {
                 continue;
             }
-            taken.push(this.players[u].color);
+            taken.push(this.players[s].color);
         }
         for (var hex in configs_1.config.game.colors) {
             if (taken.indexOf(hex) !== -1) {

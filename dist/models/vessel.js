@@ -52,6 +52,8 @@ var Vessel = (function () {
             this.type = json.type;
         if (json.colors)
             this.colors = json.colors;
+        if (json.userSlug)
+            this.userSlug = json.userSlug;
         if (json.username)
             this.username = json.username;
         if (json.owner)

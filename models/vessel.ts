@@ -4,10 +4,11 @@ import { RB } from './../types'
 
 export class Vessel {
 
-    slug?: string
+    slug: string
     name: string
     type: string
     colors?: string[]
+    userSlug?: string
     username?: string
     owner?: string | User
     stats?: RB.VesselStats
@@ -62,6 +63,7 @@ export class Vessel {
         if (json.slug) this.slug = json.slug
         if (json.type) this.type = json.type
         if (json.colors) this.colors = json.colors
+        if (json.userSlug) this.userSlug = json.userSlug
         if (json.username) this.username = json.username
         if (json.owner) this.parseOwner(json.owner)
         if (json.stats) this.stats = json.stats
