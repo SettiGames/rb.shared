@@ -14,6 +14,7 @@ export class User {
     vessels?: Vessel[]
     stats?: RB.PlayerStats
     rankings?: RB.UserRankings
+    achievements: RB.Achievement[]
 
     yourTurn?: {
         slug: string,
@@ -44,6 +45,7 @@ export class User {
         if (json.vessels) this.vessels = this.parseVessels(json.vessels)
         if (json.stats) this.stats = json.stats
         if (json.rankings) this.rankings = json.rankings
+        if (json.achievements) this.achievements = json.achievements
         
         if (json.yourTurn) this.yourTurn = json.yourTurn
     }

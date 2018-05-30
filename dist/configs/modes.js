@@ -1,55 +1,35 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.modes = {
-    'r-4p-5m': {
-        name: 'Ranked 4 Player 5 Minutes',
-        type: 'ranked',
-        isEnabled: false,
+    'r-2p-3m': {
+        name: '2 Player Multiplayer',
+        type: 'multiplayer',
+        isEnabled: true,
+        isRanked: true,
+        isSolo: false,
+        turnLength: 'minutes',
+        numOfPlayers: 2,
+        attributes: [[2, 'Players'], [3, 'Minutes']]
+    },
+    'r-4p-3m': {
+        name: '4 Player Multiplayer',
+        type: 'multiplayer',
+        isEnabled: true,
         isRanked: true,
         isSolo: false,
         turnLength: 'minutes',
         numOfPlayers: 4,
         attributes: [[4, 'Players'], [3, 'Minutes']]
     },
-    'u-2p-5m': {
-        name: 'Speedy 2 Players',
-        type: 'unranked',
-        isEnabled: true,
-        isRanked: false,
+    'r-6p-3m': {
+        name: '6 Player Multiplayer',
+        type: 'multiplayer',
+        isEnabled: false,
+        isRanked: true,
         isSolo: false,
         turnLength: 'minutes',
-        numOfPlayers: 2,
-        attributes: [[2, 'Players'], [3, 'Minutes']]
-    },
-    'u-2p-25h': {
-        name: 'Slow 2 Players',
-        type: 'unranked',
-        isEnabled: false,
-        isRanked: false,
-        isSolo: false,
-        turnLength: 'day',
-        numOfPlayers: 2,
-        attributes: [[2, 'Players'], [25, 'Hours']]
-    },
-    'u-4p-5m': {
-        name: 'Speedy 4 Players',
-        type: 'unranked',
-        isEnabled: true,
-        isRanked: false,
-        isSolo: false,
-        turnLength: 'minutes',
-        numOfPlayers: 4,
-        attributes: [[4, 'Players'], [3, 'Minutes']]
-    },
-    'u-4p-25h': {
-        name: 'Slow 4 Players',
-        type: 'unranked',
-        isEnabled: false,
-        isRanked: false,
-        isSolo: false,
-        turnLength: 'day',
-        numOfPlayers: 4,
-        attributes: [[4, 'Players'], [25, 'Hours']]
+        numOfPlayers: 6,
+        attributes: [[6, 'Players'], [3, 'Minutes']]
     },
     's-14d': {
         name: 'A Fortnight At Sea',

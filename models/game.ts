@@ -11,6 +11,7 @@ export class Game {
     rating: number = null
     winner?: string = null
     startDate: Date = null
+    endDate?: Date = null
     startTimer?: Date = null
     numOfPlayers: number = null
     isRanked: boolean = null
@@ -161,6 +162,7 @@ export class Game {
         if (json.rating) this.rating = json.rating
         if (json.winner) this.winner = json.winner
         if (json.startDate) this.startDate = new Date(json.startDate)
+        if (json.endDate) this.endDate = new Date(json.endDate)
         if (json.startTimer) this.startTimer = new Date(json.startTimer)
         if (json.numOfPlayers) this.numOfPlayers = json.numOfPlayers
         if (json.isRanked !== undefined) this.isRanked = json.isRanked

@@ -102,6 +102,11 @@ export const game = {
         censorEmojis: [ '🤬', '🦑', '🦀', '🐡', '🐠', '🐋', '🐟', '🦈', '🍣', '🍤', '⚓️' ]
     },
 
+    rewards: {
+        daily: [ 5, 2, 1 ],
+        monthly: [ 50, 10, 5 ]
+    },
+
     colors: {
         'EEF4D7': 'White',
         '667A84': 'Gray',

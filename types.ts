@@ -426,7 +426,8 @@ export namespace RB {
         treasure,
         remove,
         bribe,
-        upgrade
+        upgrade,
+        skip
     }
 
 
@@ -455,7 +456,9 @@ export namespace RB {
     }
 
     export enum GameRankingKey {
-        score = 'rankings:games:a-fortnight-at-sea'
+        scoreAllTime = 'rankings:games:a-fortnight-at-sea',
+        score30Days = 'rankings:games:a-fortnight-at-sea:30d',
+        score24Hours = 'rankings:games:a-fortnight-at-sea:24h'
     }
 
     export interface GameRankings {
@@ -655,6 +658,21 @@ export namespace RB {
         defenseSuccess?: number
         defends?: number
         collisions?: number
+    }
+
+
+
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    * Achievements
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export interface Achievement {
+        type: AchievementType
+        data: { [ key: string ]: any }
+    }
+
+    export enum AchievementType {
+        dailyTopGame = 'dailyTopGame',
+        monthlyTopGame = 'monthlyTopGame'
     }
 
 

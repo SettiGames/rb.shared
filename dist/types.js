@@ -145,6 +145,7 @@ var RB;
         NewsKey[NewsKey["remove"] = 20] = "remove";
         NewsKey[NewsKey["bribe"] = 21] = "bribe";
         NewsKey[NewsKey["upgrade"] = 22] = "upgrade";
+        NewsKey[NewsKey["skip"] = 23] = "skip";
     })(NewsKey = RB.NewsKey || (RB.NewsKey = {}));
     var GameStatKey;
     (function (GameStatKey) {
@@ -158,7 +159,9 @@ var RB;
     })(GameStatKey = RB.GameStatKey || (RB.GameStatKey = {}));
     var GameRankingKey;
     (function (GameRankingKey) {
-        GameRankingKey["score"] = "rankings:games:a-fortnight-at-sea";
+        GameRankingKey["scoreAllTime"] = "rankings:games:a-fortnight-at-sea";
+        GameRankingKey["score30Days"] = "rankings:games:a-fortnight-at-sea:30d";
+        GameRankingKey["score24Hours"] = "rankings:games:a-fortnight-at-sea:24h";
     })(GameRankingKey = RB.GameRankingKey || (RB.GameRankingKey = {}));
     var PlayerStatKey;
     (function (PlayerStatKey) {
@@ -252,6 +255,11 @@ var RB;
         VesselRankingKey["defends"] = "rankings:vessels:defends";
         VesselRankingKey["collisions"] = "rankings:vessels:collisions";
     })(VesselRankingKey = RB.VesselRankingKey || (RB.VesselRankingKey = {}));
+    var AchievementType;
+    (function (AchievementType) {
+        AchievementType["dailyTopGame"] = "dailyTopGame";
+        AchievementType["monthlyTopGame"] = "monthlyTopGame";
+    })(AchievementType = RB.AchievementType || (RB.AchievementType = {}));
     var SpaceAction;
     (function (SpaceAction) {
         SpaceAction["move"] = "M";

@@ -12,6 +12,7 @@ var Game = (function () {
         this.rating = null;
         this.winner = null;
         this.startDate = null;
+        this.endDate = null;
         this.startTimer = null;
         this.numOfPlayers = null;
         this.isRanked = null;
@@ -185,6 +186,8 @@ var Game = (function () {
             this.winner = json.winner;
         if (json.startDate)
             this.startDate = new Date(json.startDate);
+        if (json.endDate)
+            this.endDate = new Date(json.endDate);
         if (json.startTimer)
             this.startTimer = new Date(json.startTimer);
         if (json.numOfPlayers)

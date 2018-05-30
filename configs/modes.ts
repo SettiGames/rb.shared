@@ -1,10 +1,22 @@
 export const modes = {
 
     // RANKED
-    'r-4p-5m': {
-        name: 'Ranked 4 Player 5 Minutes',
-        type: 'ranked',
-        isEnabled: false,
+
+    'r-2p-3m': {
+        name: '2 Player Multiplayer',
+        type: 'multiplayer',
+        isEnabled: true,
+        isRanked: true,
+        isSolo: false,
+        turnLength: 'minutes',
+        numOfPlayers: 2,
+        attributes: [[ 2, 'Players' ], [ 3, 'Minutes' ]]
+    },
+
+    'r-4p-3m': {
+        name: '4 Player Multiplayer',
+        type: 'multiplayer',
+        isEnabled: true,
         isRanked: true,
         isSolo: false,
         turnLength: 'minutes',
@@ -12,9 +24,22 @@ export const modes = {
         attributes: [[ 4, 'Players' ], [ 3, 'Minutes' ]]
     },
 
+    'r-6p-3m': {
+        name: '6 Player Multiplayer',
+        type: 'multiplayer',
+        isEnabled: false,
+        isRanked: true,
+        isSolo: false,
+        turnLength: 'minutes',
+        numOfPlayers: 6,
+        attributes: [[ 6, 'Players' ], [ 3, 'Minutes' ]]
+    },
+
+
+
     // UNRANKED 
 
-    'u-2p-5m': {
+    /* 'u-2p-5m': {
         name: 'Speedy 2 Players',
         type: 'unranked',
         isEnabled: true,
@@ -58,7 +83,7 @@ export const modes = {
         attributes: [[ 4, 'Players' ], [ 25, 'Hours' ]]
     },
 
-    /* 'u-6p-5m': {
+    'u-6p-5m': {
         name: 'Speedy 6 Players',
         type: 'unranked',
         isEnabled: false,
@@ -79,6 +104,8 @@ export const modes = {
         numOfPlayers: 6,
         attributes: [[ 6, 'Players' ], [ 25, 'Hours' ]]
     }, */
+
+
 
     // SOLO
 

@@ -31,6 +31,8 @@ var User = (function () {
             this.stats = json.stats;
         if (json.rankings)
             this.rankings = json.rankings;
+        if (json.achievements)
+            this.achievements = json.achievements;
         if (json.yourTurn)
             this.yourTurn = json.yourTurn;
     };
