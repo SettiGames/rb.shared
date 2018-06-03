@@ -33,8 +33,12 @@ var RB;
     var CommandType;
     (function (CommandType) {
         CommandType["fact"] = "fact";
+        CommandType["game"] = "game";
+        CommandType["help"] = "help";
+        CommandType["here"] = "here";
         CommandType["joke"] = "joke";
         CommandType["luck"] = "luck";
+        CommandType["marco"] = "marco";
         CommandType["time"] = "time";
         CommandType["ratings"] = "rating";
     })(CommandType = RB.CommandType || (RB.CommandType = {}));
@@ -219,6 +223,7 @@ var RB;
     var VesselStatKey;
     (function (VesselStatKey) {
         VesselStatKey["experience"] = "experience";
+        VesselStatKey["fivers"] = "fivers";
         VesselStatKey["trophies"] = "trophies";
         VesselStatKey["distance"] = "distance";
         VesselStatKey["biggestCatch"] = "biggestCatch";
@@ -241,6 +246,7 @@ var RB;
     var VesselRankingKey;
     (function (VesselRankingKey) {
         VesselRankingKey["experience"] = "rankings:vessels:experience";
+        VesselRankingKey["fivers"] = "rankings:vessels:fivers";
         VesselRankingKey["trophies"] = "rankings:vessels:trophies";
         VesselRankingKey["distance"] = "rankings:vessels:distance";
         VesselRankingKey["fishCaught"] = "rankings:vessels:fishCaught";

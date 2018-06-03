@@ -151,14 +151,18 @@ export namespace RB {
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum CommandType {
         fact = 'fact',
+        game = 'game',
+        help = 'help',
+        here = 'here',
         joke = 'joke',
         luck = 'luck',
+        marco = 'marco',
         time = 'time',
         ratings = 'rating'
     }
 
     export interface Command {
-        (game: Game, type: CommandType): { delay: number, broadcast: RB.Broadcast }[]
+        (game: Game, type: CommandType, io: SocketIO.Server): { delay: number, broadcast: RB.Broadcast }[]
     }
 
 
@@ -336,12 +340,20 @@ export namespace RB {
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     * Radio
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+    export interface RadioData {
+        message: string
+        username: string
+        userSlug: string
+        isSolo: boolean
+    }
+
     export interface Broadcast {
         from: string
+        slug?: string
         type: BroadcastType
         message: string
         date: Date,
-        gameDate: Date
+        gameDate?: Date
     }
 
     export enum BroadcastType {
@@ -584,6 +596,7 @@ export namespace RB {
     * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     export enum VesselStatKey {
         experience ='experience',
+        fivers = 'fivers',
         trophies = 'trophies',
         distance = 'distance',
         biggestCatch = 'biggestCatch',
@@ -606,6 +619,7 @@ export namespace RB {
 
     export interface VesselStats {
         experience?: number
+        fivers?: number
         trophies?: number
         distance?: number
         biggestCatch?: Catch
@@ -628,6 +642,7 @@ export namespace RB {
 
     export enum VesselRankingKey {
         experience = 'rankings:vessels:experience',
+        fivers = 'rankings:vessels:fivers',
         trophies = 'rankings:vessels:trophies',
         distance = 'rankings:vessels:distance',
         fishCaught = 'rankings:vessels:fishCaught',
