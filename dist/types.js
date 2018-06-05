@@ -151,6 +151,11 @@ var RB;
         NewsKey[NewsKey["upgrade"] = 22] = "upgrade";
         NewsKey[NewsKey["skip"] = 23] = "skip";
     })(NewsKey = RB.NewsKey || (RB.NewsKey = {}));
+    var PublicNewsKey;
+    (function (PublicNewsKey) {
+        PublicNewsKey[PublicNewsKey["doubloons"] = 0] = "doubloons";
+        PublicNewsKey[PublicNewsKey["endGame"] = 1] = "endGame";
+    })(PublicNewsKey = RB.PublicNewsKey || (RB.PublicNewsKey = {}));
     var GameStatKey;
     (function (GameStatKey) {
         GameStatKey["score"] = "score";

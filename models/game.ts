@@ -43,6 +43,7 @@ export class Game {
 
     warning: RB.Warning = null
     newsBroadcasts: RB.Broadcast[] = null
+    publicBroadcasts: RB.Broadcast[] = null
     comm: Setti.StringMap<RB.CommItem[]> = null
     adjacents: RB.Adjacents = null
     hubActions: Setti.ActionData[] = null
@@ -190,6 +191,7 @@ export class Game {
 
         if (json.warning !== undefined) this.warning = json.warning
         if (json.newsBroadcasts) this.newsBroadcasts = json.newsBroadcasts
+        if (json.publicBroadcasts) this.publicBroadcasts = json.publicBroadcasts
         if (json.comm) this.comm = json.comm
         if (json.adjacents) this.adjacents = json.adjacents
         if (json.hubActions) this.hubActions = json.hubActions

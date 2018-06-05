@@ -442,6 +442,11 @@ export namespace RB {
         skip
     }
 
+    export enum PublicNewsKey {
+        doubloons,
+        endGame
+    }
+
 
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

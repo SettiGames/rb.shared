@@ -38,6 +38,7 @@ var Game = (function () {
         this.stats = null;
         this.warning = null;
         this.newsBroadcasts = null;
+        this.publicBroadcasts = null;
         this.comm = null;
         this.adjacents = null;
         this.hubActions = null;
@@ -240,6 +241,8 @@ var Game = (function () {
             this.warning = json.warning;
         if (json.newsBroadcasts)
             this.newsBroadcasts = json.newsBroadcasts;
+        if (json.publicBroadcasts)
+            this.publicBroadcasts = json.publicBroadcasts;
         if (json.comm)
             this.comm = json.comm;
         if (json.adjacents)
